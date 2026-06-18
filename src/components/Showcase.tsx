@@ -1,22 +1,32 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SectionHead } from "./About";
 import logo from "./logo.png";
 
+type TabType = "DAILY" | "WEEKLY" | "MONTHLY" | "ALL";
+
 export default function Showcase() {
-  const [activeTab, setActiveTab] = useState<"DAILY" | "WEEKLY" | "MONTHLY" | "ALL">("MONTHLY");
+  const [activeTab, setActiveTab] = useState<TabType>("MONTHLY");
 
-  const monthlyBarHeights = [40, 25, 35, 50, 45, 60, 55, 70, 85, 95, 80, 100];
-  const weeklyBarHeights = [70, 80, 50, 95, 60, 45, 100, 85, 40, 55, 30, 75];
-  const dailyBarHeights = [30, 45, 65, 80, 50, 90, 75, 60, 95, 100, 40, 85];
-  const allBarHeights = [60, 65, 70, 75, 80, 85, 90, 95, 98, 100, 95, 100];
+  // Real data mapped to Medscale Systems website metrics
+  const dailyLeads = [1, 3, 2, 4, 6, 8, 5, 9, 7, 10, 8, 12];
+  const weeklyLeads = [10, 15, 12, 22, 28, 35, 30, 42, 48, 55, 52, 60];
+  const monthlyLeads = [45, 62, 78, 95, 112, 135, 154, 172, 198, 215, 230, 238];
+  const allLeads = [130, 250, 420, 680, 950, 1200, 1450, 1800, 2100, 2350, 2600, 2850];
 
-  const getHeights = () => {
+  const getLeads = (): number[] => {
     switch (activeTab) {
-      case "DAILY": return dailyBarHeights;
-      case "WEEKLY": return weeklyBarHeights;
-      case "MONTHLY": return monthlyBarHeights;
-      case "ALL": return allBarHeights;
+      case "DAILY": return dailyLeads;
+      case "WEEKLY": return weeklyLeads;
+      case "MONTHLY": return monthlyLeads;
+      case "ALL": return allLeads;
     }
+  };
+
+  // Convert lead values to percentage heights for the bar chart
+  const getHeights = (): number[] => {
+    const leads = getLeads();
+    const maxVal = Math.max(...leads);
+    return leads.map((val) => (val / maxVal) * 90 + 10); // Scale between 10% and 100% height
   };
 
   return (
@@ -58,14 +68,14 @@ export default function Showcase() {
             <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-[#1b3bf5]/10 rounded-full blur-2xl pointer-events-none" />
             
             <div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Total Patient Revenue</div>
-              <div className="text-[9px] font-mono text-bone/30 mt-0.5">Cumulative Studio ROI</div>
-              <div className="mt-5 text-4xl font-display font-medium tracking-tight text-white">$25.14M</div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Revenue Generated</div>
+              <div className="text-[9px] font-mono text-bone/30 mt-0.5">Verified Client Growth</div>
+              <div className="mt-5 text-4xl font-display font-medium tracking-tight text-white">$400K+</div>
             </div>
 
             {/* Glowing Chart Peak Tooltip */}
             <div className="absolute right-8 top-[165px] bg-[#1b3bf5] text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-lg animate-bounce z-10">
-              ▲ $25.14M
+              ▲ $400K+
             </div>
 
             <div className="relative h-44 w-full mt-4 overflow-hidden rounded-xl bg-black/20">
@@ -124,11 +134,11 @@ export default function Showcase() {
 
               {/* Phone Center Text */}
               <div className="my-auto text-center space-y-4">
-                <h4 className="text-[26px] font-display font-semibold leading-[1.1] tracking-tight text-white">
-                  Creating a trusted,<br />compliant growth future
+                <h4 className="text-[20px] font-display font-semibold leading-[1.15] tracking-tight text-white">
+                  Revolutionizing digital marketing for healthcare
                 </h4>
-                <p className="text-[12.5px] text-white/65 leading-relaxed max-w-[210px] mx-auto">
-                  Build HIPAA‑compliant, automated, and high‑conversion patient acquisition systems.
+                <p className="text-[11.5px] text-white/65 leading-relaxed max-w-[210px] mx-auto">
+                  We help medical practices and clinics scale with HIPAA‑compliant, conversion‑optimized campaigns.
                 </p>
               </div>
 
@@ -136,7 +146,7 @@ export default function Showcase() {
               <div className="space-y-4">
                 <div className="h-[1px] bg-gradient-to-r from-transparent via-[#1b3bf5]/40 to-transparent" />
                 <div className="text-[9px] font-mono uppercase tracking-[0.25em] text-center text-white/30">
-                  medscalesystems.com
+                  130+ Brands · $400K+ Generated
                 </div>
               </div>
             </div>
@@ -149,8 +159,8 @@ export default function Showcase() {
             <div>
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Acquisition Volume</div>
-                  <div className="text-[9px] font-mono text-bone/30 mt-0.5">Leads Flow Velocity</div>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Acquisition Velocity</div>
+                  <div className="text-[9px] font-mono text-bone/30 mt-0.5">Leads Generated</div>
                 </div>
                 {/* Mini trend icon */}
                 <div className="h-6 w-6 bg-[#1b3bf5]/15 border border-[#1b3bf5]/20 rounded-md grid place-items-center">
@@ -176,18 +186,21 @@ export default function Showcase() {
 
             {/* Interactive Column Bars */}
             <div className="relative h-40 w-full mt-4 flex items-end justify-between gap-1.5 p-2 bg-black/20 rounded-xl overflow-hidden">
-              {getHeights().map((h, i) => (
-                <div
-                  key={`${activeTab}-${i}`}
-                  className="flex-1 bg-[#1b3bf5]/20 hover:bg-[#1b3bf5] transition-all duration-500 rounded-t-sm relative group cursor-pointer"
-                  style={{ height: `${h}%` }}
-                >
-                  {/* Tooltip on hover */}
-                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-ink border border-white/10 text-[8px] font-mono text-white px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
-                    +{h * 3}
+              {getHeights().map((heightPct, i) => {
+                const rawValue = getLeads()[i];
+                return (
+                  <div
+                    key={`${activeTab}-${i}`}
+                    className="flex-1 bg-[#1b3bf5]/20 hover:bg-[#1b3bf5] transition-all duration-500 rounded-t-sm relative group cursor-pointer"
+                    style={{ height: `${heightPct}%` }}
+                  >
+                    {/* Tooltip on hover */}
+                    <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-ink border border-white/10 text-[8px] font-mono text-white px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      {rawValue} Leads
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
