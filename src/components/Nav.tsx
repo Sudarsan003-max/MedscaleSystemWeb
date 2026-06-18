@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,9 +55,7 @@ export default function Nav() {
           >
             <a href="#top" className="flex items-center gap-3 group pl-2">
               <span className="relative grid place-items-center h-9 w-9 rounded-full bg-[#c8ff3d]">
-                <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#0a0a0a]" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 12h4l2-7 4 14 2-7h6" />
-                </svg>
+                <Logo className="h-5.5 w-5.5" color="#0a0a0a" />
               </span>
               <div className="leading-none">
                 <div className="text-[15px] font-display font-medium tracking-tight text-bone" style={{ color: "#f5f1ea" }}>

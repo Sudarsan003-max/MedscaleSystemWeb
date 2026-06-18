@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Logo from "./Logo";
 
 function useCount(target: number, duration = 1800, start = false) {
   const [v, setV] = useState(0);
@@ -77,7 +78,7 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="h-32 w-32 rounded-full grid place-items-center">
-                <span className="text-2xl">✦</span>
+                <Logo className="h-9 w-9" color="#1b3bf5" />
               </div>
             </div>
           </div>

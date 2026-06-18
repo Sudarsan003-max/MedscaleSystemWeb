@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "./Logo";
 import isaacPortrait from "./isaac_portrait.png";
 import isaacBeach from "./isaac_beach.jpg";
 import isaacMeeting from "./isaac_meeting.png";
@@ -86,8 +87,8 @@ export default function Founder() {
               </span>
             </h1>
             
-            <p className="mt-3 text-[14px] font-medium leading-relaxed text-ink/80 max-w-2xl font-display">
-              Founder <a href="#top" className="text-[#ff5d3b] hover:text-[#ff5d3b]/80 transition duration-300 font-bold underline-draw">@medscalesystems</a> – The no 1 growth partner for healthcare | Healthcare Performance Marketing & Lead Acquisition
+            <p className="mt-3 text-[14px] font-medium leading-relaxed text-ink/80 max-w-2xl font-display flex flex-wrap items-center gap-x-1">
+              Founder <a href="#top" className="inline-flex items-center gap-1 text-[#ff5d3b] hover:text-[#ff5d3b]/80 transition duration-300 font-bold underline-draw"><Logo className="h-4.5 w-4.5" color="#1b3bf5" />@medscalesystems</a> – The no 1 growth partner for healthcare | Healthcare Performance Marketing & Lead Acquisition
             </p>
 
             {/* Minimal, Professional Monospace Tags */}
