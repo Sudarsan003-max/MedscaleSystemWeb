@@ -22,12 +22,18 @@ export default function Footer() {
 
             <div className="mt-6 flex items-center gap-2">
               {[
-                { l: "Twitter", s: "X" },
-                { l: "LinkedIn", s: "in" },
-                { l: "Instagram", s: "IG" },
-                { l: "YouTube", s: "YT" },
+                { l: "Twitter", s: "X", href: "#" },
+                { l: "LinkedIn", s: "in", href: "https://www.linkedin.com/company/medscalesystems/posts/?feedView=all" },
+                { l: "Instagram", s: "IG", href: "https://www.instagram.com/medscalesystems/" },
+                { l: "YouTube", s: "YT", href: "#" },
               ].map((s) => (
-                <a key={s.l} href="#" className="grid place-items-center h-10 w-10 rounded-full border border-white/15 hover:bg-[#1b3bf5] hover:text-ink hover:border-[#1b3bf5] transition text-[11px] font-medium">
+                <a
+                  key={s.l}
+                  href={s.href}
+                  target={s.href !== "#" ? "_blank" : undefined}
+                  rel={s.href !== "#" ? "noopener noreferrer" : undefined}
+                  className="grid place-items-center h-10 w-10 rounded-full border border-white/15 hover:bg-[#1b3bf5] hover:text-bone hover:border-[#1b3bf5] transition text-[11px] font-medium"
+                >
                   {s.s}
                 </a>
               ))}
