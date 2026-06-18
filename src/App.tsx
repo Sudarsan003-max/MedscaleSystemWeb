@@ -7,6 +7,7 @@ import Founder from "./components/Founder";
 import Problems from "./components/Problems";
 import Approach from "./components/Approach";
 import Solutions from "./components/Solutions";
+import Showcase from "./components/Showcase";
 import WhyUs from "./components/WhyUs";
 import Testimonials from "./components/Testimonials";
 import Blog from "./components/Blog";
@@ -63,6 +64,7 @@ export default function App() {
           <Problems />
           <Approach />
           <Solutions />
+          <Showcase />
           <WhyUs />
           <Testimonials />
           <Blog />
