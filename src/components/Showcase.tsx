@@ -126,26 +126,25 @@ export default function Showcase() {
                     backgroundSize: "100% 100%, 20px 20px, 80px 100%"
                   }}
                 >
-                  {/* Dynamic Island */}
-                  <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-28 h-[29px] bg-[#000000] rounded-full z-40 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
-                    {/* Glossy camera lens reflection */}
+                  {/* Status Bar (Absolute at top, clears dynamic island horizontally) */}
+                  <div className="absolute top-0 inset-x-0 h-10 px-8 pt-3.5 flex items-center justify-between text-[10px] font-semibold text-white/95 z-40 select-none">
+                    <span>09:41</span>
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 fill-current opacity-90" viewBox="0 0 24 24">
+                        <path d="M12 3c-1.2 0-2.4.4-3.4 1.2L2.3 9.7c-.5.4-.5 1.1 0 1.5.5.4 1.2.4 1.7 0L12 5.5l8 6.2c.5.4 1.2.4 1.7 0 .5-.4.5-1.1 0-1.5L15.4 4.2C14.4 3.4 13.2 3 12 3z"/>
+                      </svg>
+                      <div className="w-5 h-2.5 border border-white/60 rounded-xs p-[1px] flex items-center">
+                        <div className="h-full w-4/5 bg-white rounded-2xs" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Dynamic Island (Floating centered) */}
+                  <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-6.5 bg-[#000000] rounded-full z-50 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
                     <div className="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full flex items-center justify-center">
                       <div className="w-1 h-1 bg-[#152347] rounded-full opacity-60" />
                     </div>
                     <div className="w-4 h-1 bg-[#090909] rounded-full" />
-                  </div>
-
-                  {/* Status Bar */}
-                  <div className="absolute top-0 inset-x-0 h-12 px-7 pt-3.5 flex items-center justify-between text-[10.5px] font-semibold text-white/90 z-20">
-                    <span>09:41</span>
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 fill-current opacity-80" viewBox="0 0 24 24">
-                        <path d="M12 3c-1.2 0-2.4.4-3.4 1.2L2.3 9.7c-.5.4-.5 1.1 0 1.5.5.4 1.2.4 1.7 0L12 5.5l8 6.2c.5.4 1.2.4 1.7 0 .5-.4.5-1.1 0-1.5L15.4 4.2C14.4 3.4 13.2 3 12 3z"/>
-                      </svg>
-                      <div className="w-5 h-2.5 border border-white/60 rounded-sm p-[1px] flex items-center">
-                        <div className="h-full w-4/5 bg-white rounded-2xs" />
-                      </div>
-                    </div>
                   </div>
 
                   {/* Glass Reflection overlay */}
@@ -155,11 +154,11 @@ export default function Showcase() {
                   <div className="absolute top-[22%] left-[5%] w-[120px] h-[1px] bg-gradient-to-r from-[#1b3bf5]/60 to-transparent rotate-[32deg] transform-origin-left pointer-events-none" />
                   <div className="absolute bottom-[26%] right-[5%] w-[120px] h-[1px] bg-gradient-to-r from-transparent to-[#1b3bf5]/60 rotate-[32deg] transform-origin-right pointer-events-none" />
 
-                  {/* Phone Header */}
-                  <div className="flex items-center justify-between border-b border-white/5 pb-3.5 mt-2 z-10">
+                  {/* Phone Header (Pushed down to clear status bar and Dynamic Island) */}
+                  <div className="flex items-center justify-between border-b border-white/5 pb-3.5 pt-6 mt-4 z-10">
                     <div className="flex items-center gap-1.5">
                       <img src={logo} className="h-4 w-auto object-contain" alt="Medscale Logo" />
-                      <span className="text-[11px] font-display font-medium tracking-tight text-white/90">Medscale</span>
+                      <span className="text-[11px] font-display font-medium tracking-tight text-white/95">Medscale</span>
                     </div>
                     {/* Burger Menu icon */}
                     <div className="w-4.5 h-4.5 flex flex-col justify-center gap-1 cursor-pointer">
@@ -170,10 +169,10 @@ export default function Showcase() {
 
                   {/* Phone Center Text */}
                   <div className="my-auto text-center space-y-4 z-10">
-                    <h4 className="text-[20px] font-display font-semibold leading-[1.18] tracking-tight text-white/90">
+                    <h4 className="text-[19px] font-display font-semibold leading-[1.2] tracking-tight text-white/95">
                       Revolutionizing digital marketing for healthcare
                     </h4>
-                    <p className="text-[11px] text-white/60 leading-relaxed max-w-[200px] mx-auto">
+                    <p className="text-[10.5px] text-white/65 leading-relaxed max-w-[200px] mx-auto">
                       We help medical practices and clinics scale with HIPAA‑compliant, conversion‑optimized campaigns.
                     </p>
                   </div>
