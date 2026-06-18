@@ -101,24 +101,24 @@ function PlanCard({ plan }: { plan: Plan }) {
     >
       {h && (
         <>
-          <div className="absolute -top-32 -right-20 h-64 w-64 rounded-full bg-[#c8ff3d]/15 blur-3xl" />
-          <div className="absolute top-4 right-4 text-[10px] font-mono uppercase tracking-[0.22em] bg-[#c8ff3d] text-ink px-2.5 py-1 rounded-full">★ Pick</div>
+          <div className="absolute -top-32 -right-20 h-64 w-64 rounded-full bg-[#1b3bf5]/15 blur-3xl" />
+          <div className="absolute top-4 right-4 text-[10px] font-mono uppercase tracking-[0.22em] bg-[#1b3bf5] text-ink px-2.5 py-1 rounded-full">★ Pick</div>
         </>
       )}
 
       <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-60">[ {plan.tag} ]</div>
       <h3 className="mt-5 font-display text-4xl tracking-[-0.04em] leading-none">
-        {plan.name.replace("Growth‑", "Growth ")}<span className={h ? "text-[#c8ff3d]" : "text-ink"}>.</span>
+        {plan.name.replace("Growth‑", "Growth ")}<span className={h ? "text-[#1b3bf5]" : "text-ink"}>.</span>
       </h3>
       <p className={`mt-3 text-[13.5px] leading-relaxed ${h ? "opacity-70" : "text-ink/65"}`}>{plan.desc}</p>
 
       <div className={`mt-5 rounded-2xl p-4 ${h ? "bg-white/5 border border-white/10" : "bg-bone border border-ink/10"}`} style={!h ? { background: "#f5f1ea" } : {}}>
-        <div className={`text-[10px] font-mono uppercase tracking-[0.2em] ${h ? "text-[#c8ff3d]" : "text-ink/55"}`}>Ideal for</div>
+        <div className={`text-[10px] font-mono uppercase tracking-[0.2em] ${h ? "text-[#1b3bf5]" : "text-ink/55"}`}>Ideal for</div>
         <div className={`mt-1 text-[13px] ${h ? "" : "text-ink/85"}`}>{plan.idealFor}</div>
       </div>
 
       {plan.inherits && (
-        <div className={`mt-6 text-[12px] font-medium ${h ? "text-[#c8ff3d]" : "text-ink/70"}`}>
+        <div className={`mt-6 text-[12px] font-medium ${h ? "text-[#1b3bf5]" : "text-ink/70"}`}>
           ↳ {plan.inherits}
         </div>
       )}
@@ -127,7 +127,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         {plan.features.map((f) => (
           <div key={f.title} className={`pb-4 border-b ${h ? "border-white/10" : "border-ink/10"} last:border-0 last:pb-0`}>
             <div className="flex items-center gap-2">
-              <span className={`grid place-items-center h-5 w-5 rounded-md text-[11px] font-bold ${h ? "bg-[#c8ff3d] text-ink" : "bg-ink text-bone"}`} style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}>✓</span>
+              <span className={`grid place-items-center h-5 w-5 rounded-md text-[11px] font-bold ${h ? "bg-[#1b3bf5] text-ink" : "bg-ink text-bone"}`} style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}>✓</span>
               <div className="text-[13px] font-semibold">{f.title}</div>
             </div>
             <ul className={`mt-1.5 ml-7 space-y-0.5 list-disc list-outside ${h ? "marker:text-white/30" : "marker:text-ink/30"}`}>
@@ -142,12 +142,12 @@ function PlanCard({ plan }: { plan: Plan }) {
       <a
         href="#contact"
         className={`mt-7 group/btn inline-flex w-full items-center justify-between rounded-full pl-5 pr-1.5 py-1.5 text-[13px] font-medium transition ${
-          h ? "bg-[#c8ff3d] text-ink hover:bg-white" : "bg-ink text-bone hover:bg-[#ff5d3b]"
+          h ? "bg-[#1b3bf5] text-ink hover:bg-white" : "bg-ink text-bone hover:bg-[#ff5d3b]"
         }`}
         style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}
       >
         Get a free audit
-        <span className={`grid place-items-center h-9 w-9 rounded-full transition-transform group-hover/btn:rotate-45 ${h ? "bg-ink text-[#c8ff3d]" : "bg-[#c8ff3d] text-ink"}`} style={!h ? {} : { background: "#0a0a0a" }}>
+        <span className={`grid place-items-center h-9 w-9 rounded-full transition-transform group-hover/btn:rotate-45 ${h ? "bg-ink text-[#1b3bf5]" : "bg-[#1b3bf5] text-ink"}`} style={!h ? {} : { background: "#0a0a0a" }}>
           <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17 17 7M9 7h8v8" />
           </svg>

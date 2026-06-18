@@ -72,9 +72,9 @@ export default function Problems() {
         </div>
 
         {/* CTA strip */}
-        <div className="mt-12 rounded-3xl bg-[#c8ff3d] text-ink p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+        <div className="mt-12 rounded-3xl bg-[#1b3bf5] text-ink p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
           <div className="flex items-start gap-4">
-            <span className="grid place-items-center h-12 w-12 rounded-full bg-ink text-[#c8ff3d] text-xl" style={{ background: "#0a0a0a" }}>✓</span>
+            <span className="grid place-items-center h-12 w-12 rounded-full bg-ink text-[#1b3bf5] text-xl" style={{ background: "#0a0a0a" }}>✓</span>
             <div>
               <div className="font-display text-2xl sm:text-3xl tracking-[-0.03em]">Solved for 130+ healthcare brands.</div>
               <div className="text-[13px] opacity-70 mt-1">From single‑doctor practices to multi‑location specialty groups.</div>
@@ -82,7 +82,7 @@ export default function Problems() {
           </div>
           <a href="#services" className="group inline-flex items-center gap-2 rounded-full bg-ink text-bone pl-5 pr-2 py-2 text-[13px] font-medium" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
             See the prescription
-            <span className="grid place-items-center h-9 w-9 rounded-full bg-[#c8ff3d] text-ink transition-transform group-hover:rotate-45">
+            <span className="grid place-items-center h-9 w-9 rounded-full bg-[#1b3bf5] text-ink transition-transform group-hover:rotate-45">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17 17 7M9 7h8v8" />
               </svg>
@@ -103,7 +103,7 @@ function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } })
       </div>
       {/* title */}
       <div className="col-span-10 md:col-span-5">
-        <h3 className="font-display text-2xl md:text-3xl tracking-[-0.02em] leading-tight transition group-hover:text-[#c8ff3d]">
+        <h3 className="font-display text-2xl md:text-3xl tracking-[-0.02em] leading-tight transition group-hover:text-[#1b3bf5]">
           {p.title}
         </h3>
       </div>
@@ -119,7 +119,7 @@ function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } })
         </ul>
       </div>
       <div className="col-span-12 md:col-span-1 flex justify-end items-start">
-        <span className="grid place-items-center h-10 w-10 rounded-full border border-white/15 text-[#c8ff3d] transition group-hover:bg-[#c8ff3d] group-hover:text-ink group-hover:rotate-45">
+        <span className="grid place-items-center h-10 w-10 rounded-full border border-white/15 text-[#1b3bf5] transition group-hover:bg-[#1b3bf5] group-hover:text-ink group-hover:rotate-45">
           <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17 17 7M9 7h8v8" />
           </svg>

@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section id="top" ref={ref} className="relative pt-36 pb-12 overflow-hidden">
       {/* Decorative blob */}
-      <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#c8ff3d] opacity-90 -z-0" />
+      <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#1b3bf5] opacity-90 -z-0" />
       <div className="pointer-events-none absolute top-40 -left-32 h-[360px] w-[360px] rounded-full bg-[#ff5d3b]/30 blur-[80px] -z-0" />
 
       <div className="relative mx-auto max-w-[1400px] px-5">
@@ -98,14 +98,14 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#contact" className="group relative inline-flex items-center gap-3 rounded-full bg-[#0a0a0a] text-bone pl-6 pr-2 py-2.5 text-[13px] font-medium overflow-hidden" style={{ color: "#f5f1ea" }}>
                 <span className="relative z-10">Start a project</span>
-                <span className="relative z-10 grid place-items-center h-9 w-9 rounded-full bg-[#c8ff3d] text-[#0a0a0a] transition-transform group-hover:rotate-45">
+                <span className="relative z-10 grid place-items-center h-9 w-9 rounded-full bg-[#1b3bf5] text-[#0a0a0a] transition-transform group-hover:rotate-45">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M7 17 17 7M9 7h8v8" />
                   </svg>
                 </span>
               </a>
               <a href="#work" className="group inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-3 text-[13px] font-medium hover:bg-ink hover:text-bone transition">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0a0a0a] group-hover:bg-[#c8ff3d]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0a0a0a] group-hover:bg-[#1b3bf5]" />
                 View case studies
               </a>
             </div>
@@ -123,7 +123,7 @@ export default function Hero() {
             <div className="mt-10 border-t border-ink/10 pt-6 flex items-start gap-4">
               <div className="flex -space-x-2">
                 {["SJ", "MC", "AR", "+"].map((i, k) => (
-                  <span key={k} className={`grid place-items-center h-9 w-9 rounded-full text-[10px] font-semibold border-2 border-bone ${k === 3 ? "bg-[#c8ff3d] text-[#0a0a0a]" : "bg-[#0a0a0a] text-[#f5f1ea]"}`} style={k === 3 ? {} : { color: "#f5f1ea" }}>
+                  <span key={k} className={`grid place-items-center h-9 w-9 rounded-full text-[10px] font-semibold border-2 border-bone ${k === 3 ? "bg-[#1b3bf5] text-[#0a0a0a]" : "bg-[#0a0a0a] text-[#f5f1ea]"}`} style={k === 3 ? {} : { color: "#f5f1ea" }}>
                     {i}
                   </span>
                 ))}
@@ -148,7 +148,7 @@ export default function Hero() {
               {["Performance Marketing", "Brand Systems", "HIPAA‑Compliant Funnels", "Patient Acquisition", "ABM & Lifecycle", "Conversion Optimization", "Web & Microsites", "SEO + Local"].map((t, i) => (
                 <span key={`${j}-${i}`} className="inline-flex items-center gap-6">
                   <span className="font-display text-[28px] sm:text-[36px] tracking-tight text-ink">{t}</span>
-                  <span className="text-[#c8ff3d] text-2xl">✦</span>
+                  <span className="text-[#1b3bf5] text-2xl">✦</span>
                 </span>
               ))}
             </div>

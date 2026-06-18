@@ -7,7 +7,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-28 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
-      <div className="absolute -top-20 -right-20 h-[420px] w-[420px] blob bg-[#c8ff3d] opacity-90" />
+      <div className="absolute -top-20 -right-20 h-[420px] w-[420px] blob bg-[#1b3bf5] opacity-90" />
       <div className="absolute bottom-10 -left-20 h-[260px] w-[260px] rounded-full bg-[#ff5d3b]/40 blur-[80px]" />
 
       <div className="relative mx-auto max-w-[1400px] px-5">
@@ -20,7 +20,7 @@ export default function Contact() {
               <br />
               your practice
               <br />
-              <span className="text-[#c8ff3d]">inevitable.</span>
+              <span className="text-[#1b3bf5]">inevitable.</span>
             </h2>
             <p className="mt-8 max-w-md text-[15px] leading-relaxed opacity-70">
               Join the growing number of healthcare providers who have revolutionized their
@@ -35,13 +35,13 @@ export default function Contact() {
               ].map((b) => (
                 <div key={b.k} className="group flex items-center justify-between py-5 border-b border-white/10 cursor-pointer" data-cursor="hover">
                   <div className="flex items-center gap-4">
-                    <span className="grid place-items-center h-9 w-9 rounded-full bg-[#c8ff3d] text-ink text-[12px] font-bold">✓</span>
+                    <span className="grid place-items-center h-9 w-9 rounded-full bg-[#1b3bf5] text-ink text-[12px] font-bold">✓</span>
                     <div>
                       <div className="text-[15px] font-medium">{b.k}</div>
                       <div className="text-[12px] opacity-55">{b.v}</div>
                     </div>
                   </div>
-                  <span className="opacity-30 group-hover:opacity-100 group-hover:text-[#c8ff3d] transition">↗</span>
+                  <span className="opacity-30 group-hover:opacity-100 group-hover:text-[#1b3bf5] transition">↗</span>
                 </div>
               ))}
             </div>
@@ -73,7 +73,7 @@ export default function Contact() {
 
               {sent ? (
                 <div className="mt-10 text-center py-14">
-                  <div className="mx-auto grid place-items-center h-16 w-16 rounded-full bg-[#c8ff3d] text-ink text-2xl">✓</div>
+                  <div className="mx-auto grid place-items-center h-16 w-16 rounded-full bg-[#1b3bf5] text-ink text-2xl">✓</div>
                   <h3 className="mt-6 font-display text-3xl tracking-[-0.03em]">Request received.</h3>
                   <p className="mt-3 opacity-70 text-[14px] max-w-sm mx-auto">
                     Thanks {form.name || "there"} — our growth strategist will reach out within 24 hours
@@ -131,7 +131,7 @@ export default function Contact() {
                   >
                     <span className="absolute inset-0 btn-shimmer opacity-30" />
                     <span className="relative">Request my free audit</span>
-                    <span className="relative grid place-items-center h-10 w-10 rounded-full bg-[#c8ff3d] text-ink transition-transform group-hover/btn:rotate-45">
+                    <span className="relative grid place-items-center h-10 w-10 rounded-full bg-[#1b3bf5] text-ink transition-transform group-hover/btn:rotate-45">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 17 17 7M9 7h8v8" />
                       </svg>

@@ -67,10 +67,10 @@ export default function Founder() {
             </div>
             
             {/* Technical crop corner brackets */}
-            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#c8ff3d]/60 rounded-tl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#c8ff3d]/60 rounded-tr-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#c8ff3d]/60 rounded-bl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#c8ff3d]/60 rounded-br-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#1b3bf5]/60 rounded-tl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#1b3bf5]/60 rounded-tr-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#1b3bf5]/60 rounded-bl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#1b3bf5]/60 rounded-br-sm pointer-events-none group-hover:scale-110 transition duration-300" />
           </div>
         </div>
 
@@ -336,7 +336,7 @@ export default function Founder() {
                 {results.map((r, idx) => (
                   <div
                     key={idx}
-                    className="rounded-2xl border border-ink/5 bg-paper p-5 transition-all duration-300 hover:border-lime hover:shadow-[0_0_15px_rgba(200,255,61,0.15)] group hover:-translate-y-0.5"
+                    className="rounded-2xl border border-ink/5 bg-paper p-5 transition-all duration-300 hover:border-lime hover:shadow-[0_0_15px_rgba(27,59,245,0.15)] group hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[10px] text-ink/30 font-bold uppercase tracking-wider">Milestone {idx + 1}</span>

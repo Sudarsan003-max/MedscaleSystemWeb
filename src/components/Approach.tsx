@@ -21,7 +21,7 @@ export default function Approach() {
               going <span className="relative">
                 digital
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                  <path d="M3 7 Q 50 -1 100 5 T 197 4" stroke="#c8ff3d" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M3 7 Q 50 -1 100 5 T 197 4" stroke="#1b3bf5" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </span>.
             </h2>
@@ -43,12 +43,12 @@ export default function Approach() {
               <div key={p.n} className="relative">
                 {/* dot */}
                 <div className="hidden lg:block absolute top-[26px] left-0 h-4 w-4 rounded-full bg-ink border-4 border-bone z-10" style={{ background: "#0a0a0a", borderColor: "#f5f1ea" }}>
-                  {i === 0 && <span className="absolute inset-0 rounded-full bg-[#c8ff3d] pulse-dot" />}
+                  {i === 0 && <span className="absolute inset-0 rounded-full bg-[#1b3bf5] pulse-dot" />}
                 </div>
                 <div className="lg:pl-7">
                   <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-ink/50 mb-4">[ STEP / {p.n} ]</div>
                   <h3 className="font-display text-3xl sm:text-4xl tracking-[-0.03em] text-ink leading-none">
-                    {p.title}<span className="text-[#c8ff3d]">.</span>
+                    {p.title}<span className="text-[#1b3bf5]">.</span>
                   </h3>
                   <div className="mt-1 text-[14px] text-ink/60 italic font-serif-i">{p.t}</div>
                   <p className="mt-4 text-[13.5px] leading-relaxed text-ink/70 max-w-[260px]">{p.text}</p>

@@ -52,7 +52,7 @@ export default function Testimonials() {
             <figure
               key={t.name}
               className={`group relative rounded-[28px] p-7 lg:p-8 lift overflow-hidden ${
-                i === 1 ? "bg-[#c8ff3d] text-ink" : "bg-bone border border-ink/10"
+                i === 1 ? "bg-[#1b3bf5] text-ink" : "bg-bone border border-ink/10"
               }`}
               style={i === 1 ? {} : { background: "#f5f1ea" }}
             >
@@ -70,7 +70,7 @@ export default function Testimonials() {
 
               <div className="mt-8 flex items-end justify-between gap-3 pt-5 border-t border-ink/15">
                 <figcaption className="flex items-center gap-3">
-                  <span className={`grid place-items-center h-11 w-11 rounded-full font-semibold text-[12px] ${i === 1 ? "bg-ink text-[#c8ff3d]" : "bg-ink text-bone"}`} style={{ background: "#0a0a0a", color: i === 1 ? "#c8ff3d" : "#f5f1ea" }}>
+                  <span className={`grid place-items-center h-11 w-11 rounded-full font-semibold text-[12px] ${i === 1 ? "bg-ink text-[#1b3bf5]" : "bg-ink text-bone"}`} style={{ background: "#0a0a0a", color: i === 1 ? "#1b3bf5" : "#f5f1ea" }}>
                     {t.initials}
                   </span>
                   <div>
