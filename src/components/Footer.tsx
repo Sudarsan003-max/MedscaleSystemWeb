@@ -1,15 +1,12 @@
-import Logo from "./Logo";
-
 export default function Footer() {
   return (
     <footer className="relative bg-ink text-bone pt-20 pb-8 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       <div className="mx-auto max-w-[1400px] px-5">
         {/* Big wordmark */}
-        <div className="border-y border-white/10 py-10 sm:py-16 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="border-y border-white/10 py-10 sm:py-16">
           <div className="font-display text-[20vw] sm:text-[18vw] lg:text-[15vw] leading-[0.85] tracking-[-0.05em]">
             Medscale<span className="text-[#1b3bf5]">®</span>
           </div>
-          <Logo className="h-20 w-20 md:h-28 md:w-28 opacity-25 hover:opacity-100 hover:scale-105 hover:rotate-3 transition-all duration-500 cursor-pointer" color="#1b3bf5" />
         </div>
 
         <div className="mt-14 grid md:grid-cols-12 gap-10">
