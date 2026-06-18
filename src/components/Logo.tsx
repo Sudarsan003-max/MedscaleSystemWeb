@@ -6,7 +6,7 @@ interface LogoProps {
 export default function Logo({ className = "h-6 w-6", color = "#1b3bf5" }: LogoProps) {
   return (
     <svg
-      viewBox="0 -20 590 420"
+      viewBox="0 -100 670 500"
       className={className}
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,10 @@ export default function Logo({ className = "h-6 w-6", color = "#1b3bf5" }: LogoP
       <polygon points="120,380 120,120 160,160 160,380" />
 
       {/* Right Column */}
-      <polygon points="420,380 420,160 500,80 500,380" />
+      <polygon points="540,380 540,80 620,0 620,380" />
 
       {/* Middle V-Shape and Arrow (Unified path to avoid seams) */}
-      <polygon points="180,180 300,300 525,75 540,90 570,0 480,30 495,45 300,240 180,120" />
+      <polygon points="180,180 300,300 605,-5 620,10 650,-80 560,-50 575,-35 300,240 180,120" />
     </svg>
   );
 }
