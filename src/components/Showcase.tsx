@@ -97,56 +97,97 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Center: iPhone Mockup */}
-          <div className="w-[300px] h-[600px] rounded-[52px] border-[11px] border-[#1a1a1a] bg-[#000000] relative overflow-hidden shadow-[0_30px_70px_-15px_rgba(27,59,245,0.35)] shrink-0 z-10 hover:scale-[1.02] transition-transform duration-500">
-            {/* Notch / Dynamic Island */}
-            <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-28 h-6.5 bg-[#1a1a1a] rounded-full z-30 flex items-center justify-between px-3">
-              <div className="w-2 h-2 bg-[#080808] rounded-full" />
-              <div className="w-3.5 h-1 bg-[#080808] rounded-full" />
-            </div>
+          {/* Center: 3D iPhone Mockup */}
+          <div className="relative w-[310px] h-[620px] shrink-0 z-10 hover:scale-[1.02] transition-transform duration-500 select-none">
+            {/* Volume & Power Buttons (3D Protrusions) */}
+            <div className="absolute top-[100px] -left-[3px] w-[3px] h-[28px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-l-md shadow-lg" />
+            <div className="absolute top-[145px] -left-[3px] w-[3px] h-[52px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-l-md shadow-lg" />
+            <div className="absolute top-[210px] -left-[3px] w-[3px] h-[52px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-l-md shadow-lg" />
+            <div className="absolute top-[170px] -right-[3px] w-[3px] h-[78px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-r-md shadow-lg" />
 
-            {/* Status Bar */}
-            <div className="absolute top-0 inset-x-0 h-11 px-7 pt-3 flex items-center justify-between text-[11px] font-semibold text-white/90 z-20 select-none">
-              <span>09:41</span>
-              <div className="flex items-center gap-2">
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-1.2 0-2.4.4-3.4 1.2L2.3 9.7c-.5.4-.5 1.1 0 1.5.5.4 1.2.4 1.7 0L12 5.5l8 6.2c.5.4 1.2.4 1.7 0 .5-.4.5-1.1 0-1.5L15.4 4.2C14.4 3.4 13.2 3 12 3z"/></svg>
-                <div className="w-5.5 h-3 border border-white/60 rounded p-0.5 flex items-center"><div className="h-full w-4/5 bg-white rounded-xs" /></div>
-              </div>
-            </div>
+            {/* Outer Titanium Chassis (3D Frame) */}
+            <div className="w-full h-full rounded-[52px] p-[3px] bg-gradient-to-b from-[#8f939d] via-[#3d4045] to-[#121315] shadow-[inset_0_1px_2px_rgba(255,255,255,0.45),_inset_0_-1px_2px_rgba(0,0,0,0.6),_0_20px_50px_rgba(0,0,0,0.8),_0_0_40px_rgba(27,59,245,0.15)] flex items-center justify-center">
+              
+              {/* Inner bezel & screen container */}
+              <div className="w-full h-full rounded-[49px] p-[8px] bg-[#000000] flex items-center justify-center relative">
+                
+                {/* Speaker Ear Piece Grill */}
+                <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-16 h-[2px] bg-[#222] rounded-full z-30" />
 
-            {/* Phone Screen Content */}
-            <div className="absolute inset-0 pt-14 px-6 flex flex-col justify-between pb-10 bg-gradient-to-b from-[#080808] via-[#030303] to-[#0a0a0a] text-white">
-              {/* Internal subtle ambient glow */}
-              <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 bg-[#1b3bf5]/15 rounded-full blur-[70px] pointer-events-none" />
+                {/* Main Screen */}
+                <div 
+                  className="w-full h-full rounded-[41px] overflow-hidden relative flex flex-col justify-between p-6 select-none bg-[#050505]"
+                  style={{
+                    backgroundImage: `
+                      radial-gradient(circle at 50% 35%, rgba(27,59,245,0.16) 0%, transparent 60%),
+                      radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 40px, transparent 40px, transparent 80px)
+                    `,
+                    backgroundSize: "100% 100%, 20px 20px, 80px 100%"
+                  }}
+                >
+                  {/* Dynamic Island */}
+                  <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-28 h-[29px] bg-[#000000] rounded-full z-40 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
+                    {/* Glossy camera lens reflection */}
+                    <div className="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full flex items-center justify-center">
+                      <div className="w-1 h-1 bg-[#152347] rounded-full opacity-60" />
+                    </div>
+                    <div className="w-4 h-1 bg-[#090909] rounded-full" />
+                  </div>
 
-              {/* Phone Header */}
-              <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                <div className="flex items-center gap-2">
-                  <img src={logo} className="h-4.5 w-auto object-contain" alt="Medscale Logo" />
-                  <span className="text-xs font-display font-medium tracking-tight text-white/90">Medscale</span>
-                </div>
-                {/* Burger Menu icon */}
-                <div className="w-5 h-5 flex flex-col justify-center gap-1 cursor-pointer">
-                  <span className="w-3.5 h-0.5 bg-white/70 self-end" />
-                  <span className="w-4.5 h-0.5 bg-white/70 self-end" />
-                </div>
-              </div>
+                  {/* Status Bar */}
+                  <div className="absolute top-0 inset-x-0 h-12 px-7 pt-3.5 flex items-center justify-between text-[10.5px] font-semibold text-white/90 z-20">
+                    <span>09:41</span>
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 fill-current opacity-80" viewBox="0 0 24 24">
+                        <path d="M12 3c-1.2 0-2.4.4-3.4 1.2L2.3 9.7c-.5.4-.5 1.1 0 1.5.5.4 1.2.4 1.7 0L12 5.5l8 6.2c.5.4 1.2.4 1.7 0 .5-.4.5-1.1 0-1.5L15.4 4.2C14.4 3.4 13.2 3 12 3z"/>
+                      </svg>
+                      <div className="w-5 h-2.5 border border-white/60 rounded-sm p-[1px] flex items-center">
+                        <div className="h-full w-4/5 bg-white rounded-2xs" />
+                      </div>
+                    </div>
+                  </div>
 
-              {/* Phone Center Text */}
-              <div className="my-auto text-center space-y-4">
-                <h4 className="text-[20px] font-display font-semibold leading-[1.15] tracking-tight text-white">
-                  Revolutionizing digital marketing for healthcare
-                </h4>
-                <p className="text-[11.5px] text-white/65 leading-relaxed max-w-[210px] mx-auto">
-                  We help medical practices and clinics scale with HIPAA‑compliant, conversion‑optimized campaigns.
-                </p>
-              </div>
+                  {/* Glass Reflection overlay */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] z-30" />
 
-              {/* Phone Bottom Footer */}
-              <div className="space-y-4">
-                <div className="h-[1px] bg-gradient-to-r from-transparent via-[#1b3bf5]/40 to-transparent" />
-                <div className="text-[9px] font-mono uppercase tracking-[0.25em] text-center text-white/30">
-                  130+ Brands · $400K+ Generated
+                  {/* Diagonal glowing lines */}
+                  <div className="absolute top-[22%] left-[5%] w-[120px] h-[1px] bg-gradient-to-r from-[#1b3bf5]/60 to-transparent rotate-[32deg] transform-origin-left pointer-events-none" />
+                  <div className="absolute bottom-[26%] right-[5%] w-[120px] h-[1px] bg-gradient-to-r from-transparent to-[#1b3bf5]/60 rotate-[32deg] transform-origin-right pointer-events-none" />
+
+                  {/* Phone Header */}
+                  <div className="flex items-center justify-between border-b border-white/5 pb-3.5 mt-2 z-10">
+                    <div className="flex items-center gap-1.5">
+                      <img src={logo} className="h-4 w-auto object-contain" alt="Medscale Logo" />
+                      <span className="text-[11px] font-display font-medium tracking-tight text-white/90">Medscale</span>
+                    </div>
+                    {/* Burger Menu icon */}
+                    <div className="w-4.5 h-4.5 flex flex-col justify-center gap-1 cursor-pointer">
+                      <span className="w-3.5 h-0.5 bg-white/70 self-end" />
+                      <span className="w-4.5 h-0.5 bg-white/70 self-end" />
+                    </div>
+                  </div>
+
+                  {/* Phone Center Text */}
+                  <div className="my-auto text-center space-y-4 z-10">
+                    <h4 className="text-[20px] font-display font-semibold leading-[1.18] tracking-tight text-white/90">
+                      Revolutionizing digital marketing for healthcare
+                    </h4>
+                    <p className="text-[11px] text-white/60 leading-relaxed max-w-[200px] mx-auto">
+                      We help medical practices and clinics scale with HIPAA‑compliant, conversion‑optimized campaigns.
+                    </p>
+                  </div>
+
+                  {/* Phone Bottom Footer */}
+                  <div className="space-y-3.5 z-10">
+                    <div className="h-[1px] bg-gradient-to-r from-transparent via-[#1b3bf5]/45 to-transparent" />
+                    <div className="text-[8.5px] font-mono uppercase tracking-[0.25em] text-center text-white/35">
+                      130+ Brands · $400K+ Generated
+                    </div>
+                    {/* Screen Bottom Bar Indicator */}
+                    <div className="w-28 h-1 bg-white/60 mx-auto rounded-full mt-1.5" />
+                  </div>
+
                 </div>
               </div>
             </div>
