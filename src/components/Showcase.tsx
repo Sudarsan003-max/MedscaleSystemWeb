@@ -6,6 +6,7 @@ type TabType = "DAILY" | "WEEKLY" | "MONTHLY" | "ALL";
 
 export default function Showcase() {
   const [activeTab, setActiveTab] = useState<TabType>("MONTHLY");
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   // Real data mapped to Medscale Systems website metrics
   const dailyLeads = [1, 3, 2, 4, 6, 8, 5, 9, 7, 10, 8, 12];
@@ -51,11 +52,24 @@ export default function Showcase() {
           </p>
         </div>
 
-        {/* Widescreen Behance-style Layout */}
-        <div className="mt-20 relative flex items-center justify-center gap-6 py-10 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full">
+        {/* Widescreen Behance-style Layout with 3D Perspective Container */}
+        <div 
+          className="mt-20 relative flex items-center justify-center gap-6 py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full"
+          style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
+        >
           
-          {/* Card 1: Leftmost Abstract Vertical Bars */}
-          <div className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden items-end justify-between p-6 opacity-35 hover:opacity-70 transition-opacity duration-500 shrink-0">
+          {/* Card 1: Leftmost Abstract Vertical Bars (3D Curled Back) */}
+          <div 
+            onMouseEnter={() => setHoveredCard(1)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden items-end justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
+            style={{ 
+              transform: hoveredCard === 1 
+                ? "rotateY(8deg) translateZ(10px) scale(0.96)" 
+                : "rotateY(20deg) translateZ(-30px) scale(0.91)", 
+              transition: "transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)"
+            }}
+          >
             <div className="w-3 bg-gradient-to-t from-[#1b3bf5] to-transparent rounded-full" style={{ height: "60%" }} />
             <div className="w-3 bg-gradient-to-t from-[#4f6ef7] to-transparent rounded-full" style={{ height: "80%" }} />
             <div className="w-3 bg-gradient-to-t from-[#1b3bf5] to-transparent rounded-full" style={{ height: "40%" }} />
@@ -63,22 +77,37 @@ export default function Showcase() {
             <div className="w-3 bg-gradient-to-t from-[#1b3bf5] to-transparent rounded-full" style={{ height: "70%" }} />
           </div>
 
-          {/* Card 2: Total Patient Value Chart */}
-          <div className="relative w-80 h-[380px] bg-[#0d0d0d]/80 border border-white/10 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-white/20 transition-colors duration-500 shrink-0 flex flex-col justify-between">
+          {/* Card 2: Total Patient Value Chart (3D Angled Left) */}
+          <div 
+            onMouseEnter={() => setHoveredCard(2)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="relative w-80 h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-3xl p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(27,59,245,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between"
+            style={{ 
+              transform: hoveredCard === 2 
+                ? "rotateY(4deg) rotateX(1deg) translateZ(25px) scale(1.02)" 
+                : "rotateY(13deg) translateZ(-10px) scale(0.97)", 
+              transition: "transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)",
+              transformStyle: "preserve-3d"
+            }}
+          >
             <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-[#1b3bf5]/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] rounded-3xl" />
             
-            <div>
+            <div style={{ transform: "translateZ(15px)" }}>
               <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Revenue Generated</div>
               <div className="text-[9px] font-mono text-bone/30 mt-0.5">Verified Client Growth</div>
               <div className="mt-5 text-4xl font-display font-medium tracking-tight text-white">$400K+</div>
             </div>
 
             {/* Glowing Chart Peak Tooltip */}
-            <div className="absolute right-8 top-[165px] bg-[#1b3bf5] text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-lg animate-bounce z-10">
+            <div 
+              className="absolute right-8 top-[165px] bg-[#1b3bf5] text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-lg animate-bounce z-10"
+              style={{ transform: "translateZ(30px)" }}
+            >
               ▲ $400K+
             </div>
 
-            <div className="relative h-44 w-full mt-4 overflow-hidden rounded-xl bg-black/20">
+            <div className="relative h-44 w-full mt-4 overflow-hidden rounded-xl bg-black/30" style={{ transform: "translateZ(10px)" }}>
               <svg viewBox="0 0 300 200" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
@@ -97,8 +126,19 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Center: 3D iPhone Mockup */}
-          <div className="relative w-[310px] h-[620px] shrink-0 z-10 hover:scale-[1.02] transition-transform duration-500 select-none">
+          {/* Center: 3D iPhone Mockup (Elevated & Hover Interactive) */}
+          <div 
+            onMouseEnter={() => setHoveredCard(3)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="relative w-[310px] h-[620px] shrink-0 z-20 select-none"
+            style={{ 
+              transform: hoveredCard === 3 
+                ? "translateZ(65px) scale(1.04) rotateY(-2deg) rotateX(2deg)" 
+                : "translateZ(35px) scale(1.01)", 
+              transition: "transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)",
+              transformStyle: "preserve-3d"
+            }}
+          >
             {/* Volume & Power Buttons (3D Protrusions) */}
             <div className="absolute top-[100px] -left-[3px] w-[3px] h-[28px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-l-md shadow-lg" />
             <div className="absolute top-[145px] -left-[3px] w-[3px] h-[52px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-l-md shadow-lg" />
@@ -106,7 +146,7 @@ export default function Showcase() {
             <div className="absolute top-[170px] -right-[3px] w-[3px] h-[78px] bg-gradient-to-b from-[#6e717a] via-[#3a3b3f] to-[#121314] rounded-r-md shadow-lg" />
 
             {/* Outer Titanium Chassis (3D Frame) */}
-            <div className="w-full h-full rounded-[52px] p-[3px] bg-gradient-to-b from-[#8f939d] via-[#3d4045] to-[#121315] shadow-[inset_0_1px_2px_rgba(255,255,255,0.45),_inset_0_-1px_2px_rgba(0,0,0,0.6),_0_20px_50px_rgba(0,0,0,0.8),_0_0_40px_rgba(27,59,245,0.15)] flex items-center justify-center">
+            <div className="w-full h-full rounded-[52px] p-[3.5px] bg-gradient-to-b from-[#8f939d] via-[#3d4045] to-[#121315] shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.55),_inset_0_-1.5px_2.5px_rgba(0,0,0,0.75),_0_35px_80px_rgba(0,0,0,0.9),_0_0_50px_rgba(27,59,245,0.22)] flex items-center justify-center">
               
               {/* Inner bezel & screen container */}
               <div className="w-full h-full rounded-[49px] p-[8px] bg-[#000000] flex items-center justify-center relative">
@@ -119,15 +159,24 @@ export default function Showcase() {
                   className="w-full h-full rounded-[41px] overflow-hidden relative flex flex-col justify-between p-6 select-none bg-[#050505]"
                   style={{
                     backgroundImage: `
-                      radial-gradient(circle at 50% 35%, rgba(27,59,245,0.16) 0%, transparent 60%),
+                      radial-gradient(circle at 50% 35%, rgba(27,59,245,0.18) 0%, transparent 60%),
                       radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                       linear-gradient(90deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 40px, transparent 40px, transparent 80px)
                     `,
                     backgroundSize: "100% 100%, 20px 20px, 80px 100%"
                   }}
                 >
-                  {/* Status Bar (Absolute at top, clears dynamic island horizontally) */}
-                  <div className="absolute top-0 inset-x-0 h-10 px-8 pt-3.5 flex items-center justify-between text-[10px] font-semibold text-white/95 z-40 select-none">
+                  {/* Dynamic Island */}
+                  <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-28 h-[29px] bg-[#000000] rounded-full z-40 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
+                    {/* Glossy camera lens reflection */}
+                    <div className="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full flex items-center justify-center">
+                      <div className="w-1 h-1 bg-[#152347] rounded-full opacity-60" />
+                    </div>
+                    <div className="w-4 h-1 bg-[#090909] rounded-full" />
+                  </div>
+
+                  {/* Status Bar */}
+                  <div className="absolute top-0 inset-x-0 h-12 px-7 pt-3.5 flex items-center justify-between text-[10.5px] font-semibold text-white/95 z-20">
                     <span>09:41</span>
                     <div className="flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 fill-current opacity-90" viewBox="0 0 24 24">
@@ -139,16 +188,8 @@ export default function Showcase() {
                     </div>
                   </div>
 
-                  {/* Dynamic Island (Floating centered) */}
-                  <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-6.5 bg-[#000000] rounded-full z-50 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
-                    <div className="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full flex items-center justify-center">
-                      <div className="w-1 h-1 bg-[#152347] rounded-full opacity-60" />
-                    </div>
-                    <div className="w-4 h-1 bg-[#090909] rounded-full" />
-                  </div>
-
                   {/* Glass Reflection overlay */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] z-30" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.09] z-30" />
 
                   {/* Diagonal glowing lines */}
                   <div className="absolute top-[22%] left-[5%] w-[120px] h-[1px] bg-gradient-to-r from-[#1b3bf5]/60 to-transparent rotate-[32deg] transform-origin-left pointer-events-none" />
@@ -192,11 +233,23 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Card 3: Acquisition Volume Bar Chart */}
-          <div className="relative w-80 h-[380px] bg-[#0d0d0d]/80 border border-white/10 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-white/20 transition-colors duration-500 shrink-0 flex flex-col justify-between">
+          {/* Card 3: Acquisition Volume Bar Chart (3D Angled Right) */}
+          <div 
+            onMouseEnter={() => setHoveredCard(4)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="relative w-80 h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-3xl p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(27,59,245,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between"
+            style={{ 
+              transform: hoveredCard === 4 
+                ? "rotateY(-4deg) rotateX(1deg) translateZ(25px) scale(1.02)" 
+                : "rotateY(-13deg) translateZ(-10px) scale(0.97)", 
+              transition: "transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)",
+              transformStyle: "preserve-3d"
+            }}
+          >
             <div className="absolute bottom-1/4 right-1/3 w-32 h-32 bg-[#4f6ef7]/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] rounded-3xl" />
 
-            <div>
+            <div style={{ transform: "translateZ(15px)" }}>
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Acquisition Velocity</div>
@@ -225,7 +278,7 @@ export default function Showcase() {
             </div>
 
             {/* Interactive Column Bars */}
-            <div className="relative h-40 w-full mt-4 flex items-end justify-between gap-1.5 p-2 bg-black/20 rounded-xl overflow-hidden">
+            <div className="relative h-40 w-full mt-4 flex items-end justify-between gap-1.5 p-2 bg-black/30 rounded-xl overflow-hidden" style={{ transform: "translateZ(10px)" }}>
               {getHeights().map((heightPct, i) => {
                 const rawValue = getLeads()[i];
                 return (
@@ -244,8 +297,18 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Card 4: Rightmost Abstract Horizontal Blocks */}
-          <div className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden flex-col justify-between p-6 opacity-35 hover:opacity-70 transition-opacity duration-500 shrink-0">
+          {/* Card 4: Rightmost Abstract Horizontal Blocks (3D Curled Back) */}
+          <div 
+            onMouseEnter={() => setHoveredCard(5)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden flex-col justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
+            style={{ 
+              transform: hoveredCard === 5 
+                ? "rotateY(-8deg) translateZ(10px) scale(0.96)" 
+                : "rotateY(-20deg) translateZ(-30px) scale(0.91)", 
+              transition: "transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)"
+            }}
+          >
             <div className="h-5 w-full bg-gradient-to-r from-transparent to-[#1b3bf5]/60 rounded-full" />
             <div className="h-5 w-4/5 bg-gradient-to-r from-transparent to-[#4f6ef7]/60 rounded-full self-end" />
             <div className="h-5 w-5/6 bg-gradient-to-r from-transparent to-[#1b3bf5]/60 rounded-full" />
