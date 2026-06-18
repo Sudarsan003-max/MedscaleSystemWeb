@@ -167,23 +167,36 @@ export default function Showcase() {
                   }}
                 >
                   {/* Dynamic Island */}
-                  <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-28 h-[29px] bg-[#000000] rounded-full z-40 flex items-center justify-between px-3.5 border border-white/5 shadow-inner">
-                    {/* Glossy camera lens reflection */}
-                    <div className="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full flex items-center justify-center">
-                      <div className="w-1 h-1 bg-[#152347] rounded-full opacity-60" />
+                  <div className="absolute top-3 w-[90px] h-[25px] left-1/2 -translate-x-1/2 bg-[#000000] rounded-full z-50 flex items-center justify-between px-3 border border-white/5 shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.06)]">
+                    {/* Camera Lens */}
+                    <div className="w-[7px] h-[7px] bg-[#0c0c0c] rounded-full flex items-center justify-center border border-white/5">
+                      <div className="w-[3px] h-[3px] bg-[#1a2c5b] rounded-full opacity-65" />
                     </div>
-                    <div className="w-4 h-1 bg-[#090909] rounded-full" />
+                    {/* Proximity / Light Sensor */}
+                    <div className="w-[12px] h-[3px] bg-[#0a0a0a] rounded-full opacity-50 border border-white/5" />
                   </div>
 
                   {/* Status Bar */}
-                  <div className="absolute top-0 inset-x-0 h-12 px-7 pt-3.5 flex items-center justify-between text-[10.5px] font-semibold text-white/95 z-20">
+                  <div className="absolute top-0 inset-x-0 h-10 px-8 pt-3 flex items-center justify-between text-[10px] font-semibold text-white/95 z-40 select-none">
                     <span>09:41</span>
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 fill-current opacity-90" viewBox="0 0 24 24">
-                        <path d="M12 3c-1.2 0-2.4.4-3.4 1.2L2.3 9.7c-.5.4-.5 1.1 0 1.5.5.4 1.2.4 1.7 0L12 5.5l8 6.2c.5.4 1.2.4 1.7 0 .5-.4.5-1.1 0-1.5L15.4 4.2C14.4 3.4 13.2 3 12 3z"/>
+                    <div className="flex items-center gap-[6px] opacity-90">
+                      {/* Cellular Signal Icons */}
+                      <div className="flex items-end gap-[1.5px] h-[9px]">
+                        <div className="w-[2px] h-[3px] bg-white rounded-xs" />
+                        <div className="w-[2px] h-[5px] bg-white rounded-xs" />
+                        <div className="w-[2px] h-[7px] bg-white rounded-xs" />
+                        <div className="w-[2px] h-[9px] bg-white rounded-xs" />
+                      </div>
+                      {/* Wi-Fi Icon */}
+                      <svg className="w-[12px] h-[12px] fill-current" viewBox="0 0 24 24">
+                        <path d="M12 21a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8.5-7.5a12.5 12.5 0 0 0-17 0 .8.8 0 0 0 .1 1.2l1.2 1.2a.8.8 0 0 0 1.1-.1 8.5 8.5 0 0 1 12.2 0 .8.8 0 0 0 1.1.1l1.2-1.2a.8.8 0 0 0 .1-1.2zm3-3a16.5 16.5 0 0 0-23 0 .8.8 0 0 0 .1 1.2l1.2 1.2a.8.8 0 0 0 1.1-.1 12.5 12.5 0 0 1 18.2 0 .8.8 0 0 0 1.1.1l1.2-1.2a.8.8 0 0 0 .1-1.2z" />
                       </svg>
-                      <div className="w-5 h-2.5 border border-white/60 rounded-xs p-[1px] flex items-center">
-                        <div className="h-full w-4/5 bg-white rounded-2xs" />
+                      {/* Battery Icon with Protruding Right Tip */}
+                      <div className="flex items-center gap-[1px]">
+                        <div className="w-[20px] h-[10px] border border-white/80 rounded-[2.5px] p-[1px] flex items-center">
+                          <div className="h-full w-[80%] bg-white rounded-[1px]" />
+                        </div>
+                        <div className="w-[1.2px] h-[3.5px] bg-white/80 rounded-r-[0.8px]" />
                       </div>
                     </div>
                   </div>
