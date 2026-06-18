@@ -78,7 +78,7 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="h-32 w-32 rounded-full grid place-items-center">
-                <Logo className="h-9 w-9" color="#1b3bf5" />
+                <Logo className="h-9 w-9" color="#ffffff" />
               </div>
             </div>
           </div>
