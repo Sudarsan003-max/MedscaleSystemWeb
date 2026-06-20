@@ -52,25 +52,25 @@ export default function Testimonials() {
             <figure
               key={t.name}
               className={`group relative rounded-[28px] p-7 lg:p-8 lift overflow-hidden ${
-                i === 1 ? "bg-[#1b3bf5] text-ink" : "bg-bone border border-ink/10"
+                i === 1 ? "bg-[#0000cd] text-white" : "bg-bone border border-ink/10"
               }`}
               style={i === 1 ? {} : { background: "#f5f1ea" }}
             >
               <div className="flex items-center justify-between">
-                <div className="flex text-ink text-[14px]">★★★★★</div>
+                <div className={`flex text-[14px] ${i === 1 ? "text-white" : "text-ink"}`}>★★★★★</div>
                 <span className={`text-[10px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full ${i === 1 ? "bg-ink text-bone" : "bg-ink/5 text-ink/70"}`} style={i === 1 ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}>
                   {t.tag}
                 </span>
               </div>
 
               <div className="mt-5 font-display text-6xl leading-none opacity-20">"</div>
-              <blockquote className="mt-2 text-[15.5px] leading-[1.55] text-ink/85">
+              <blockquote className={`mt-2 text-[15.5px] leading-[1.55] ${i === 1 ? "text-white/85" : "text-ink/85"}`}>
                 {t.quote}
               </blockquote>
 
-              <div className="mt-8 flex items-end justify-between gap-3 pt-5 border-t border-ink/15">
+              <div className={`mt-8 flex items-end justify-between gap-3 pt-5 border-t ${i === 1 ? "border-white/20" : "border-ink/15"}`}>
                 <figcaption className="flex items-center gap-3">
-                  <span className={`grid place-items-center h-11 w-11 rounded-full font-semibold text-[12px] ${i === 1 ? "bg-ink text-[#1b3bf5]" : "bg-ink text-bone"}`} style={{ background: "#0a0a0a", color: i === 1 ? "#1b3bf5" : "#f5f1ea" }}>
+                  <span className={`grid place-items-center h-11 w-11 rounded-full font-semibold text-[12px] ${i === 1 ? "bg-ink text-[#0000cd]" : "bg-ink text-bone"}`} style={{ background: "#0a0a0a", color: i === 1 ? "#0000cd" : "#f5f1ea" }}>
                     {t.initials}
                   </span>
                   <div>

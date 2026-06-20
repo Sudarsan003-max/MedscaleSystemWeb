@@ -30,7 +30,7 @@ export default function About() {
               Systems that <span className="relative inline-block">
                 convert
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 300 14" fill="none">
-                  <path d="M3 9 Q 80 -2 150 6 T 297 5" stroke="#1b3bf5" strokeWidth="4" strokeLinecap="round" />
+                  <path d="M3 9 Q 80 -2 150 6 T 297 5" stroke="#0000cd" strokeWidth="4" strokeLinecap="round" />
                 </svg>
               </span>.
             </h2>
@@ -118,12 +118,12 @@ export default function About() {
                 <div className="rounded-[20px] bg-[#141414] p-6 text-bone" style={{ color: "#f5f1ea" }}>
                   <div className="flex items-start justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#1b3bf5]">Patient Acquisition Engine</div>
-                      <div className="mt-1.5 font-display text-2xl tracking-tight">Pulse.Live<span className="text-[#1b3bf5]">.</span></div>
+                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd]">Patient Acquisition Engine</div>
+                      <div className="mt-1.5 font-display text-2xl tracking-tight">Pulse.Live<span className="text-[#0000cd]">.</span></div>
                     </div>
                     <div className="relative h-14 w-14">
-                      <div className="spin-slow absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #1b3bf5, #ff5d3b, #1b3bf5)" }} />
-                      <div className="absolute inset-[3px] rounded-full bg-[#141414] grid place-items-center text-[#1b3bf5]">✦</div>
+                      <div className="spin-slow absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #0000cd, #ff5d3b, #0000cd)" }} />
+                      <div className="absolute inset-[3px] rounded-full bg-[#141414] grid place-items-center text-[#0000cd]">✦</div>
                     </div>
                   </div>
 
@@ -139,11 +139,11 @@ export default function About() {
                         >
                           <div className="flex items-center justify-between text-[12px]">
                             <div className="flex items-center gap-2">
-                              <span className="h-1.5 w-1.5 rounded-full bg-[#1b3bf5] group-hover:animate-pulse" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#0000cd] group-hover:animate-pulse" />
                               <span className="font-medium text-bone/80 group-hover:text-bone transition-colors duration-300">{b.label}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                              <span className="rounded bg-[#1b3bf5]/10 border border-[#1b3bf5]/20 px-2.5 py-0.5 font-mono text-[9px] text-[#1b3bf5] font-semibold tracking-wider">
+                              <span className="rounded bg-[#0000cd]/10 border border-[#0000cd]/20 px-2.5 py-0.5 font-mono text-[9px] text-[#0000cd] font-semibold tracking-wider">
                                 {b.status}
                               </span>
                             </div>
@@ -159,7 +159,7 @@ export default function About() {
                                   key={segIdx}
                                   className={`h-full flex-1 rounded-[1.5px] transition-all duration-500 ease-out ${
                                     isActive && animate
-                                      ? "bg-[#1b3bf5] shadow-[0_0_6px_rgba(27,59,245,0.4)] group-hover:shadow-[0_0_10px_rgba(27,59,245,0.85)] group-hover:bg-[#4f6ef7]"
+                                      ? "bg-[#0000cd] shadow-[0_0_6px_rgba(0, 0, 205,0.4)] group-hover:shadow-[0_0_10px_rgba(0, 0, 205,0.85)] group-hover:bg-[#4169e1]"
                                       : "bg-white/5"
                                   }`}
                                   style={{
@@ -178,7 +178,7 @@ export default function About() {
                   <div className="mt-8 rounded-2xl bg-white/[0.03] border border-white/10 p-4">
                     <div className="flex items-center justify-between text-[11px] font-mono opacity-70">
                       <span>LEADS · 30D</span>
-                      <span className="text-[#1b3bf5]">▲ +428%</span>
+                      <span className="text-[#0000cd]">▲ +428%</span>
                     </div>
                     <div className="mt-4 flex items-end gap-1.5 h-20">
                       {Array.from({ length: 24 }).map((_, i) => {
@@ -186,7 +186,7 @@ export default function About() {
                         return (
                           <div
                             key={i}
-                            className="flex-1 rounded-sm bg-[#1b3bf5]/80 ticker-bar"
+                            className="flex-1 rounded-sm bg-[#0000cd]/80 ticker-bar"
                             style={{ height: animate ? `${h}%` : "10%", transition: "height 1s ease", transitionDelay: `${i * 30}ms`, animationDelay: `${i * 100}ms` }}
                           />
                         );
@@ -201,7 +201,7 @@ export default function About() {
                       { k: "ROAS", v: "6.4x" },
                     ].map((m) => (
                       <div key={m.k} className="rounded-xl border border-white/10 p-3 text-center">
-                        <div className="font-display text-xl text-[#1b3bf5]">{m.v}</div>
+                        <div className="font-display text-xl text-[#0000cd]">{m.v}</div>
                         <div className="text-[9px] font-mono tracking-[0.2em] uppercase opacity-50">{m.k}</div>
                       </div>
                     ))}
@@ -224,7 +224,7 @@ function BentoCard({
   return (
     <div
       className={`${span} lift relative rounded-2xl p-5 border ${
-        isDark ? "bg-ink text-bone border-ink" : isLime ? "bg-[#1b3bf5] text-ink border-[#1b3bf5]" : "bg-bone text-ink border-ink/10"
+        isDark ? "bg-ink text-bone border-ink" : isLime ? "bg-[#0000cd] text-ink border-[#0000cd]" : "bg-bone text-ink border-ink/10"
       }`}
       style={isDark ? { background: "#0a0a0a", color: "#f5f1ea", borderColor: "#0a0a0a" } : {}}
     >

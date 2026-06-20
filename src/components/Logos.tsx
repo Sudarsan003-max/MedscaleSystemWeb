@@ -31,7 +31,7 @@ export default function Logos() {
           {[...brands, ...brands, ...brands].map((b, i) => (
             <span key={i} className="inline-flex items-center gap-5">
               <span className="font-display text-[40px] sm:text-[56px] tracking-[-0.03em] text-bone" style={{ color: "#f5f1ea" }}>{b}</span>
-              <span className="h-2 w-2 rounded-full bg-[#1b3bf5]" />
+              <span className="h-2 w-2 rounded-full bg-[#0000cd]" />
             </span>
           ))}
         </div>
@@ -42,7 +42,7 @@ export default function Logos() {
           {[...brands, ...brands, ...brands].map((b, i) => (
             <span key={i} className="inline-flex items-center gap-5">
               <span className="font-display text-[40px] sm:text-[56px] tracking-[-0.03em] text-outline-bone">{b}</span>
-              <span className="text-[#1b3bf5] text-2xl">✦</span>
+              <span className="text-[#0000cd] text-2xl">✦</span>
             </span>
           ))}
         </div>

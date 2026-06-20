@@ -66,10 +66,10 @@ export default function Founder() {
             </div>
             
             {/* Technical crop corner brackets */}
-            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#1b3bf5]/60 rounded-tl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#1b3bf5]/60 rounded-tr-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#1b3bf5]/60 rounded-bl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#1b3bf5]/60 rounded-br-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#0000cd]/60 rounded-tl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#0000cd]/60 rounded-tr-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#0000cd]/60 rounded-bl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#0000cd]/60 rounded-br-sm pointer-events-none group-hover:scale-110 transition duration-300" />
           </div>
         </div>
 
@@ -182,7 +182,7 @@ export default function Founder() {
                 </h3>
                 <div className="text-[14.5px] leading-relaxed text-ink/85 space-y-6 font-sans">
                   <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-coral first-letter:leading-none">
-                    Isaac Vivian is the Founder of MedScale Systems, a specialized growth advisory and technology partner for aesthetic and cosmetic healthcare clinics. Under his leadership, MedScale builds comprehensive patient acquisition infrastructures that integrate performance marketing, CRM automation, and front-desk sales processes to deliver scalable, predictable revenue growth.
+                    Isaac Vivian is the Founder of MedScale Systems, a specialized growth advisory and technology partner for aesthetic and cosmetic healthcare clinics. Under his leadership, MedScale Systems builds comprehensive patient acquisition infrastructures that integrate performance marketing, CRM automation, and front-desk sales processes to deliver scalable, predictable revenue growth.
                   </p>
                   <p>
                     With an entrepreneurial career shaped by a deep focus on conversion design, digital systems, and consumer psychology, Isaac recognized early that lead volume is irrelevant without robust operational follow-through. His business philosophy centers on execution endurance, building scalable systems that allow healthcare practices to convert marketing spend into measurable clinical bookings.
@@ -214,7 +214,7 @@ export default function Founder() {
                     <strong> The bottleneck is rarely the clinical expertise; it is the acquisition infrastructure.</strong>
                   </p>
                   <p>
-                    MedScale resolves this by deploying end-to-end patient acquisition engines designed to streamline every phase of the patient lifecycle:
+                    MedScale Systems resolves this by deploying end-to-end patient acquisition engines designed to streamline every phase of the patient lifecycle:
                   </p>
                   
                   {/* Clean Monospace Step Cards */}
@@ -335,7 +335,7 @@ export default function Founder() {
                 {results.map((r, idx) => (
                   <div
                     key={idx}
-                    className="rounded-2xl border border-ink/5 bg-paper p-5 transition-all duration-300 hover:border-lime hover:shadow-[0_0_15px_rgba(27,59,245,0.15)] group hover:-translate-y-0.5"
+                    className="rounded-2xl border border-ink/5 bg-paper p-5 transition-all duration-300 hover:border-lime hover:shadow-[0_0_15px_rgba(0, 0, 205,0.15)] group hover:-translate-y-0.5"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[10px] text-ink/30 font-bold uppercase tracking-wider">Milestone {idx + 1}</span>

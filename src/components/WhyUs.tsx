@@ -73,7 +73,7 @@ export default function WhyUs() {
               data-cursor="hover"
             >
               <div className="flex items-start justify-between">
-                <span className="grid place-items-center h-14 w-14 rounded-full bg-ink text-bone text-2xl transition group-hover:bg-[#1b3bf5] group-hover:text-ink" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+                <span className="grid place-items-center h-14 w-14 rounded-full bg-ink text-bone text-2xl transition group-hover:bg-[#0000cd] group-hover:text-ink" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
                   {r.icon}
                 </span>
                 <span className="font-mono text-[11px] tracking-[0.22em] opacity-50">[ {r.n} / 04 ]</span>
@@ -88,13 +88,13 @@ export default function WhyUs() {
                 ))}
               </ul>
               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition">
-                <span className="grid place-items-center h-9 w-9 rounded-full bg-[#1b3bf5] text-ink">
+                <span className="grid place-items-center h-9 w-9 rounded-full bg-[#0000cd] text-ink">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M7 17 17 7M9 7h8v8" />
                   </svg>
                 </span>
               </div>
-              {i % 2 === 0 && <div className="absolute top-1/2 -right-px h-12 w-px bg-[#1b3bf5] opacity-0 group-hover:opacity-100 transition" />}
+              {i % 2 === 0 && <div className="absolute top-1/2 -right-px h-12 w-px bg-[#0000cd] opacity-0 group-hover:opacity-100 transition" />}
             </div>
           ))}
         </div>

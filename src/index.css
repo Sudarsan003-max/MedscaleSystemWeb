@@ -9,8 +9,8 @@
   --color-bone-2: #ebe5da;
   --color-ink: #0a0a0a;
   --color-ink-2: #141414;
-  --color-lime: #1b3bf5;
-  --color-lime-2: #4f6ef7;
+  --color-lime: #0000cd;
+  --color-lime-2: #4169e1;
   --color-coral: #ff5d3b;
 }
 
@@ -23,7 +23,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-::selection { background: #1b3bf5; color: #0a0a0a; }
+::selection { background: #0000cd; color: #0a0a0a; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -92,9 +92,9 @@ html, body {
 
 /* Pulse dot */
 @keyframes pulseDot {
-  0% { box-shadow: 0 0 0 0 rgba(27,59,245,.8); }
-  70% { box-shadow: 0 0 0 14px rgba(27,59,245,0); }
-  100% { box-shadow: 0 0 0 0 rgba(27,59,245,0); }
+  0% { box-shadow: 0 0 0 0 rgba(0, 0, 205,.8); }
+  70% { box-shadow: 0 0 0 14px rgba(0, 0, 205,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 205,0); }
 }
 .pulse-dot { animation: pulseDot 2s infinite; }
 

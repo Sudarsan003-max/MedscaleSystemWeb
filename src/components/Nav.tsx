@@ -53,14 +53,14 @@ export default function Nav() {
             }`}
           >
             <a href="#top" className="flex items-center gap-3 group pl-2">
-              <span className="relative grid place-items-center h-9 w-9 rounded-full bg-[#1b3bf5]">
+              <span className="relative grid place-items-center h-9 w-9 rounded-full bg-[#0000cd]">
                 <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#0a0a0a]" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 12h4l2-7 4 14 2-7h6" />
                 </svg>
               </span>
               <div className="leading-none">
                 <div className="text-[15px] font-display font-medium tracking-tight text-bone" style={{ color: "#f5f1ea" }}>
-                  Medscale<span className="text-[#1b3bf5]">®</span>
+                  Medscale Systems<span className="text-[#0000cd]">®</span>
                 </div>
                 <div className="text-[9px] font-mono tracking-[0.22em] uppercase text-bone/50 mt-0.5" style={{ color: "rgba(245,241,234,.5)" }}>Healthcare Growth</div>
               </div>
@@ -73,7 +73,7 @@ export default function Nav() {
                   href={l.href}
                   className="group flex items-center gap-1.5 px-3.5 py-2 rounded-full hover:bg-white/5 transition"
                 >
-                  <span className="font-mono text-[9px] opacity-50 group-hover:text-[#1b3bf5] transition">{l.n}</span>
+                  <span className="font-mono text-[9px] opacity-50 group-hover:text-[#0000cd] transition">{l.n}</span>
                   <span className="font-medium">{l.label}</span>
                 </a>
               ))}
@@ -82,10 +82,10 @@ export default function Nav() {
             <div className="flex items-center gap-2">
               <a
                 href="#contact"
-                className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#1b3bf5] text-[#0a0a0a] pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-white transition group"
+                className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white text-[#0a0a0a] pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-[#0000cd] transition group"
               >
                 Book Intro Call
-                <span className="grid place-items-center h-7 w-7 rounded-full bg-[#0a0a0a] text-[#1b3bf5] transition-transform group-hover:rotate-45">
+                <span className="grid place-items-center h-7 w-7 rounded-full bg-[#0a0a0a] text-white transition-transform group-hover:rotate-45">
                   <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M7 17 17 7M9 7h8v8" />
                   </svg>
@@ -115,7 +115,7 @@ export default function Nav() {
                   <span>↗</span>
                 </a>
               ))}
-              <a href="#contact" onClick={() => setOpen(false)} className="mt-1 mx-1 inline-flex justify-center rounded-2xl bg-[#1b3bf5] text-[#0a0a0a] px-4 py-3 text-sm font-semibold">
+              <a href="#contact" onClick={() => setOpen(false)} className="mt-1 mx-1 inline-flex justify-center rounded-2xl bg-white text-[#0a0a0a] px-4 py-3 text-sm font-semibold hover:bg-[#0000cd] transition">
                 Book Intro Call →
               </a>
             </div>

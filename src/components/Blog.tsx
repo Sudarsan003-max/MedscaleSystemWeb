@@ -46,7 +46,7 @@ export default function Blog() {
   return (
     <section id="blog" className="relative py-28 bg-ink overflow-hidden border-b border-white/5" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       {/* Glow Blob */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[350px] w-[350px] rounded-full bg-[#1b3bf5]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[350px] w-[350px] rounded-full bg-[#0000cd]/5 blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1400px] px-5">
         <SectionHead n="009" label="Insights & Guides" light />
@@ -54,15 +54,15 @@ export default function Blog() {
         <div className="mt-12 grid lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Featured Post Card */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#1b3bf5] mb-4">[ Featured Article ]</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-4">[ Featured Article ]</div>
             
             <div className="group relative rounded-[28px] bg-white/[0.02] border border-white/10 p-6 sm:p-8 hover:bg-white/[0.04] hover:border-white/15 transition-all duration-300">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#1b3bf5]/10 border border-[#1b3bf5]/20 px-3 py-1 text-[10px] font-mono text-[#1b3bf5] uppercase tracking-[0.1em]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#0000cd]/10 border border-[#0000cd]/20 px-3 py-1 text-[10px] font-mono text-[#0000cd] uppercase tracking-[0.1em]">
                 Patient Acquisition · 2026
               </span>
               
               <h3 className="mt-6 font-display text-3xl sm:text-4xl leading-[1.15] tracking-tight text-bone">
-                How Aesthetic Clinics in India Are Getting <span className="font-serif-i text-[#1b3bf5]">3x More Patients</span> Using Digital Marketing
+                How Aesthetic Clinics in India Are Getting <span className="font-serif-i text-[#0000cd]">3x More Patients</span> Using Digital Marketing
               </h3>
               
               <p className="mt-4 text-[14.5px] leading-relaxed text-bone/70">
@@ -72,10 +72,10 @@ export default function Blog() {
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-end">
                 <button
                   onClick={() => setModalOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#1b3bf5] text-ink pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-bone transition group/btn"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0000cd] text-ink pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-bone transition group/btn"
                 >
                   Read Full Guide
-                  <span className="grid place-items-center h-7 w-7 rounded-full bg-ink text-[#1b3bf5] transition-transform group-hover/btn:translate-x-0.5">
+                  <span className="grid place-items-center h-7 w-7 rounded-full bg-ink text-[#0000cd] transition-transform group-hover/btn:translate-x-0.5">
                     →
                   </span>
                 </button>
@@ -85,7 +85,7 @@ export default function Blog() {
 
           {/* Right Column: Scraped Insights Bento Cards */}
           <div className="lg:col-span-7">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#1b3bf5] mb-4">[ The 4 Growth Channels ]</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-4">[ The 4 Growth Channels ]</div>
             
             <div className="grid sm:grid-cols-2 gap-4">
               {channels.map((ch) => (
@@ -94,13 +94,13 @@ export default function Blog() {
                   className="group relative rounded-2xl bg-white/[0.01] border border-white/5 p-6 hover:border-white/15 hover:bg-white/[0.03] transition duration-300"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-bone/30 group-hover:text-[#1b3bf5] transition duration-300">{ch.num}</span>
+                    <span className="font-mono text-xs text-bone/30 group-hover:text-[#0000cd] transition duration-300">{ch.num}</span>
                     <span className="rounded-md bg-white/5 border border-white/10 px-2 py-0.5 font-mono text-[9px] text-bone/60 uppercase tracking-[0.1em]">
                       {ch.badge}
                     </span>
                   </div>
 
-                  <h4 className="mt-4 font-display text-xl font-medium text-bone group-hover:text-[#1b3bf5] transition duration-300">
+                  <h4 className="mt-4 font-display text-xl font-medium text-bone group-hover:text-[#0000cd] transition duration-300">
                     {ch.title}
                   </h4>
 
@@ -110,15 +110,15 @@ export default function Blog() {
 
                   <div className="mt-6 flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-4">
                     <span className="opacity-40">Impact</span>
-                    <span className="text-[#1b3bf5]">{ch.metric}</span>
+                    <span className="text-[#0000cd]">{ch.metric}</span>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Quick Summary Banner */}
-            <div className="mt-6 rounded-2xl border border-[#1b3bf5]/15 bg-[#1b3bf5]/[0.02] p-5">
-              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1b3bf5]">[ Digital Engine Verdict ]</div>
+            <div className="mt-6 rounded-2xl border border-[#0000cd]/15 bg-[#0000cd]/[0.02] p-5">
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#0000cd]">[ Digital Engine Verdict ]</div>
               <p className="mt-2 text-[13.5px] leading-relaxed text-bone/80">
                 Aesthetic clinics that dominate their local Indian market in 2026 treat digital marketing as a core business system. Combining high-intent search ads with visual social proof creates a compounding patient acquisition loop that runs 24/7.
               </p>
@@ -134,7 +134,7 @@ export default function Blog() {
             <div>
               {/* Header inside modal */}
               <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1b3bf5]">Medscale Insights</span>
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#0000cd]">Medscale Systems Insights</span>
                 <button
                   onClick={() => setModalOpen(false)}
                   className="group grid place-items-center h-10 w-10 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition"
@@ -146,12 +146,12 @@ export default function Blog() {
 
               {/* Scrollable Content */}
               <article className="mt-8 space-y-6 text-bone/80 text-[15.5px] leading-relaxed font-sans">
-                <span className="inline-block bg-[#1b3bf5]/10 px-2 py-0.5 rounded font-mono text-[10px] text-[#1b3bf5] uppercase tracking-[0.1em]">
+                <span className="inline-block bg-[#0000cd]/10 px-2 py-0.5 rounded font-mono text-[10px] text-[#0000cd] uppercase tracking-[0.1em]">
                   Comprehensive Guide
                 </span>
                 
                 <h2 className="font-display text-3xl sm:text-5xl leading-tight text-bone tracking-tight mt-3">
-                  How Aesthetic Clinics in India Get <span className="font-serif-i text-[#1b3bf5]">3x Patients</span>
+                  How Aesthetic Clinics in India Get <span className="font-serif-i text-[#0000cd]">3x Patients</span>
                 </h2>
 
                 <p className="mt-4">
@@ -162,7 +162,7 @@ export default function Blog() {
                   What is the difference? The first clinic shows up on Google when patients search for treatments. The second one does not.
                 </p>
 
-                <div className="border-l-2 border-[#1b3bf5] pl-4 py-1 my-6 italic text-bone/95">
+                <div className="border-l-2 border-[#0000cd] pl-4 py-1 my-6 italic text-bone/95">
                   "In 2026, digital marketing is no longer optional for aesthetic clinics in India. It is the single biggest lever for growing your patient base."
                 </div>
 
@@ -237,7 +237,7 @@ export default function Blog() {
               </div>
               <button
                 onClick={() => { setModalOpen(false); window.location.hash = "contact"; }}
-                className="rounded-full bg-[#1b3bf5] text-ink px-5 py-2.5 text-xs font-semibold hover:bg-bone transition"
+                className="rounded-full bg-[#0000cd] text-ink px-5 py-2.5 text-xs font-semibold hover:bg-bone transition"
               >
                 Book Free Audit
               </button>
