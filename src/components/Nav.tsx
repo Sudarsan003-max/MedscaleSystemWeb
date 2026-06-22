@@ -59,7 +59,7 @@ export default function Nav() {
               </span>
               <div className="leading-none">
                 <div className="text-[15px] font-display font-medium tracking-tight text-bone" style={{ color: "#f5f1ea" }}>
-                  Medscale Systems<span className="text-[#0000cd]">®</span>
+                  Medscale Systems
                 </div>
                 <div className="text-[9px] font-mono tracking-[0.22em] uppercase text-bone/50 mt-0.5" style={{ color: "rgba(245,241,234,.5)" }}>Healthcare Growth</div>
               </div>

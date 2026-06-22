@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Big wordmark */}
         <div className="border-y border-white/10 py-10 sm:py-16">
           <div className="font-display text-[11vw] sm:text-[9vw] lg:text-[7.5vw] leading-[0.85] tracking-[-0.05em]">
-            Medscale Systems<span className="text-[#0000cd]">®</span>
+            Medscale Systems
           </div>
         </div>
 
