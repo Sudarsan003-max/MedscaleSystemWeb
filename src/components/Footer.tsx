@@ -1,6 +1,15 @@
+import { GradientBars } from "./ui/gradient-bars-background";
+
 export default function Footer() {
   return (
     <footer className="relative bg-ink text-bone pt-20 pb-8 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+      {/* Background Animated Gradient Bars */}
+      <GradientBars
+        numBars={18}
+        gradientFrom="rgba(27, 59, 245, 0.15)"
+        gradientTo="transparent"
+        animationDuration={3}
+      />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5">
         {/* Big wordmark */}
         <div className="border-y border-white/10 py-10 sm:py-16">
