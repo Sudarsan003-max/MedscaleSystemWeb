@@ -201,7 +201,7 @@ export default function About() {
                       { k: "ROAS", v: "6.4x" },
                     ].map((m) => (
                       <div key={m.k} className="rounded-xl border border-white/10 p-3 text-center">
-                        <div className="font-display text-xl text-[#0000cd]">{m.v}</div>
+                        <div className="font-display text-xl text-white font-semibold">{m.v}</div>
                         <div className="text-[9px] font-mono tracking-[0.2em] uppercase opacity-50">{m.k}</div>
                       </div>
                     ))}
