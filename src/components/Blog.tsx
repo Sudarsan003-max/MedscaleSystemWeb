@@ -44,7 +44,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="relative py-28 bg-ink overflow-hidden border-b border-white/5" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+    <section id="blog" className="relative pt-28 pb-10 bg-ink overflow-hidden border-b border-white/5" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       {/* Glow Blob */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[350px] w-[350px] rounded-full bg-[#0000cd]/5 blur-[120px] pointer-events-none" />
 
@@ -132,11 +132,11 @@ export default function Blog() {
         <div className="mt-16 flex justify-center">
           <a
             href="#all-articles"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 px-8 py-4 text-[13px] font-semibold hover:bg-white hover:text-ink transition duration-300"
+            className="group inline-flex items-center gap-3.5 rounded-full border border-white/10 px-10 py-5 text-[15px] font-semibold hover:bg-white hover:text-ink transition duration-300"
             style={{ color: "#f5f1ea" }}
           >
             More Articles
-            <span className="grid place-items-center h-6 w-6 rounded-full bg-white/10 text-bone group-hover:bg-[#0000cd] group-hover:text-ink transition-all">
+            <span className="grid place-items-center h-7 w-7 rounded-full bg-white/10 text-bone group-hover:bg-[#0000cd] group-hover:text-ink transition-all">
               →
             </span>
           </a>
