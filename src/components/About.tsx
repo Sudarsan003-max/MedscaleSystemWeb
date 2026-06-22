@@ -224,7 +224,7 @@ function BentoCard({
   return (
     <div
       className={`${span} lift relative rounded-2xl p-5 border ${
-        isDark ? "bg-ink text-bone border-ink" : isLime ? "bg-[#0000cd] text-ink border-[#0000cd]" : "bg-bone text-ink border-ink/10"
+        isDark ? "bg-ink text-bone border-ink" : isLime ? "bg-[#0000cd] text-white border-[#0000cd]" : "bg-bone text-ink border-ink/10"
       }`}
       style={isDark ? { background: "#0a0a0a", color: "#f5f1ea", borderColor: "#0a0a0a" } : {}}
     >
