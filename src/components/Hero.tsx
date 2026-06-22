@@ -78,7 +78,7 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="h-32 w-32 rounded-full grid place-items-center">
-                <img src={logo} className="h-[44px] w-auto object-contain" style={{ transform: "rotate(8deg) translate(5.8%, -4.6%)" }} alt="Medscale Systems Logo" />
+                <img src={logo} className="h-[54px] w-auto object-contain" style={{ transform: "rotate(8deg) translate(5.8%, -4.6%)" }} alt="Medscale Systems Logo" />
               </div>
             </div>
           </div>
