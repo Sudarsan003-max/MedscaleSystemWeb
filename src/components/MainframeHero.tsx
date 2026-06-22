@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Check, ArrowRight } from "lucide-react";
+import ScrubVideo from "./ScrubVideo";
+
+const MAINFRAME_VIDEO =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4";
 
 // 1. Typewriter Hook
 function useTypewriter(text: string, speed = 38, startDelay = 600) {
@@ -37,77 +41,8 @@ function useTypewriter(text: string, speed = 38, startDelay = 600) {
 export default function MainframeHero() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const prevX = useRef<number | null>(null);
-
-  // 2. Typewriter invocation
+  // Typewriter invocation
   const { displayed, done } = useTypewriter("we'd love to\nhear from you!", 38, 600);
-
-  // 3. Desktop Video Scrubbing & Mobile Autoplay
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let isSeeking = false;
-    let targetTime: number | null = null;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (window.innerWidth < 1024) return;
-      if (!video.duration) return;
-
-      const currentX = e.clientX;
-      if (prevX.current !== null) {
-        const delta = currentX - prevX.current;
-        const duration = video.duration;
-        let newTime = video.currentTime + (delta / window.innerWidth) * 0.8 * duration;
-        newTime = Math.max(0, Math.min(newTime, duration));
-        
-        targetTime = newTime;
-        if (!isSeeking) {
-          video.currentTime = newTime;
-          isSeeking = true;
-        }
-      }
-      prevX.current = currentX;
-    };
-
-    const handleSeeked = () => {
-      if (targetTime !== null && Math.abs(video.currentTime - targetTime) > 0.05) {
-        video.currentTime = targetTime;
-      } else {
-        isSeeking = false;
-        targetTime = null;
-      }
-    };
-
-    const handleLoadedMetadata = () => {
-      video.currentTime = 0.001;
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    video.addEventListener("seeked", handleSeeked);
-
-    if (video.readyState >= 1) {
-      handleLoadedMetadata();
-    } else {
-      video.addEventListener("loadedmetadata", handleLoadedMetadata);
-    }
-
-    // Mobile check
-    if (window.innerWidth < 1024) {
-      video.autoplay = true;
-      video.loop = true;
-      video.play().catch((err) => {
-        console.log("Autoplay failed:", err);
-      });
-    }
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      video.removeEventListener("seeked", handleSeeked);
-      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-    };
-  }, []);
 
   const serviceOptions = ["Brand", "Digital", "Campaign", "Other"];
 
@@ -175,17 +110,9 @@ export default function MainframeHero() {
         </nav>
       </div>
 
-      {/* 3. Background Video Container */}
+      {/* Background 3D render — pre-decoded frame-cache scrubbing (see ScrubVideo) */}
       <div className="order-last lg:order-none relative lg:absolute lg:inset-0 lg:z-0 overflow-hidden pointer-events-none w-full aspect-square md:aspect-video lg:aspect-auto lg:h-full bg-neutral-50 lg:bg-transparent">
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover object-right lg:object-right-bottom"
-        >
-          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4" type="video/mp4" />
-        </video>
+        <ScrubVideo src={MAINFRAME_VIDEO} videoClassName="object-right lg:object-right-bottom" />
       </div>
 
       {/* 5. Content Layout */}

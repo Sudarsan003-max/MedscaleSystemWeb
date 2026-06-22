@@ -118,12 +118,12 @@ export default function About() {
                 <div className="rounded-[20px] bg-[#141414] p-6 text-bone" style={{ color: "#f5f1ea" }}>
                   <div className="flex items-start justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd]">Patient Acquisition Engine</div>
-                      <div className="mt-1.5 font-display text-2xl tracking-tight">Pulse.Live<span className="text-[#0000cd]">.</span></div>
+                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-white">Patient Acquisition Engine</div>
+                      <div className="mt-1.5 font-display text-2xl tracking-tight">Pulse.Live<span className="text-white">.</span></div>
                     </div>
                     <div className="relative h-14 w-14">
                       <div className="spin-slow absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #0000cd, #ff5d3b, #0000cd)" }} />
-                      <div className="absolute inset-[3px] rounded-full bg-[#141414] grid place-items-center text-[#0000cd]">✦</div>
+                      <div className="absolute inset-[3px] rounded-full bg-[#141414] grid place-items-center text-white">✦</div>
                     </div>
                   </div>
 
@@ -139,11 +139,11 @@ export default function About() {
                         >
                           <div className="flex items-center justify-between text-[12px]">
                             <div className="flex items-center gap-2">
-                              <span className="h-1.5 w-1.5 rounded-full bg-[#0000cd] group-hover:animate-pulse" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-white group-hover:animate-pulse" />
                               <span className="font-medium text-bone/80 group-hover:text-bone transition-colors duration-300">{b.label}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                              <span className="rounded bg-[#0000cd]/10 border border-[#0000cd]/20 px-2.5 py-0.5 font-mono text-[9px] text-[#0000cd] font-semibold tracking-wider">
+                              <span className="rounded bg-white/10 border border-white/20 px-2.5 py-0.5 font-mono text-[9px] text-white font-semibold tracking-wider">
                                 {b.status}
                               </span>
                             </div>
@@ -178,7 +178,7 @@ export default function About() {
                   <div className="mt-8 rounded-2xl bg-white/[0.03] border border-white/10 p-4">
                     <div className="flex items-center justify-between text-[11px] font-mono opacity-70">
                       <span>LEADS · 30D</span>
-                      <span className="text-[#0000cd]">▲ +428%</span>
+                      <span className="text-white">▲ +428%</span>
                     </div>
                     <div className="mt-4 flex items-end gap-1.5 h-20">
                       {Array.from({ length: 24 }).map((_, i) => {
