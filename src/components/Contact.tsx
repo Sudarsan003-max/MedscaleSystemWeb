@@ -27,6 +27,7 @@ export default function Contact() {
             "Content-Type": "text/plain"
           },
           body: JSON.stringify({
+            token: "medscale_secure_token_2026_xyz",
             ...form,
             submittedAt: new Date().toISOString()
           }),
