@@ -17,21 +17,20 @@ export default function Contact() {
       try {
         // Prepare payload (using standard URLSearchParams or JSON depending on the service)
         // Most services like Google Sheets Web App and Formspree accept URL-encoded or JSON
-        const response = await fetch(FORM_ENDPOINT, {
+        // Using no-cors mode and text/plain content type to bypass browser CORS pre-flight
+        // blocks on Google Apps Script redirect requests. The Apps Script receives the JSON
+        // body inside e.postData.contents and parses it successfully.
+        await fetch(FORM_ENDPOINT, {
           method: "POST",
+          mode: "no-cors",
           headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Content-Type": "text/plain"
           },
           body: JSON.stringify({
             ...form,
             submittedAt: new Date().toISOString()
           }),
         });
-        
-        if (!response.ok) {
-          console.error("Endpoint responded with error status:", response.status);
-        }
       } catch (error) {
         console.error("Error submitting form to endpoint:", error);
       }
