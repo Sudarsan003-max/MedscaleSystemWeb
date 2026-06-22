@@ -52,7 +52,7 @@ export default function App() {
   const isAllArticlesPage = hash === "#all-articles";
 
   return (
-    <div className="relative min-h-screen bg-paper text-ink grain overflow-x-hidden">
+    <div className="relative bg-white text-neutral-900 font-sans selection:bg-[#EAECE9] selection:text-[#1C2E1E] antialiased overflow-x-hidden flex flex-col lg:block lg:min-h-screen">
       <Nav />
       {isFounderPage ? (
         <main className="pt-24">
