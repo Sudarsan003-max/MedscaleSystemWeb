@@ -1,9 +1,45 @@
 import { useState } from "react";
 import { SectionHead } from "./About";
 
+// Replace this with your Google Sheets Web App URL, Formspree endpoint, or Web3Forms URL
+const FORM_ENDPOINT = "";
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", practice: "", stage: "Growth-Core", notes: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    if (FORM_ENDPOINT) {
+      try {
+        // Prepare payload (using standard URLSearchParams or JSON depending on the service)
+        // Most services like Google Sheets Web App and Formspree accept URL-encoded or JSON
+        const response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            ...form,
+            submittedAt: new Date().toISOString()
+          }),
+        });
+        
+        if (!response.ok) {
+          console.error("Endpoint responded with error status:", response.status);
+        }
+      } catch (error) {
+        console.error("Error submitting form to endpoint:", error);
+      }
+    }
+
+    setSubmitting(false);
+    setSent(true);
+  };
 
   return (
     <section id="contact" className="relative py-28 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
@@ -60,7 +96,7 @@ export default function Contact() {
 
           <div className="lg:col-span-6">
             <form
-              onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+              onSubmit={handleSubmit}
               className="relative rounded-[28px] bg-bone text-ink p-7 sm:p-9"
               style={{ background: "#f5f1ea" }}
             >
@@ -126,11 +162,12 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="group/btn mt-7 relative inline-flex w-full items-center justify-between rounded-full bg-ink text-bone pl-6 pr-1.5 py-1.5 text-[13.5px] font-medium overflow-hidden"
+                    disabled={submitting}
+                    className="group/btn mt-7 relative inline-flex w-full items-center justify-between rounded-full bg-ink text-bone pl-6 pr-1.5 py-1.5 text-[13.5px] font-medium overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ background: "#0a0a0a", color: "#f5f1ea" }}
                   >
                     <span className="absolute inset-0 btn-shimmer opacity-30" />
-                    <span className="relative">Request my free audit</span>
+                    <span className="relative">{submitting ? "Sending request..." : "Request my free audit"}</span>
                     <span className="relative grid place-items-center h-10 w-10 rounded-full bg-[#0000cd] text-ink transition-transform group-hover/btn:rotate-45">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 17 17 7M9 7h8v8" />
