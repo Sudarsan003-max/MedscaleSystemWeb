@@ -57,6 +57,7 @@ export default function Footer() {
                 <li><a href="#results" className="underline-draw">Results</a></li>
                 <li><a href="#blog" className="underline-draw">Blog</a></li>
                 <li><a href="#founder" className="underline-draw">Founder</a></li>
+                <li><a href="#mainframe" className="underline-draw">Mainframe</a></li>
                 <li><a href="#contact" className="underline-draw">Contact</a></li>
               </ul>
             </div>

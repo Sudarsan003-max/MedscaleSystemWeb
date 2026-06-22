@@ -14,6 +14,7 @@ import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AllArticles from "./components/AllArticles";
+import MainframeHero from "./components/MainframeHero";
 
 export default function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -22,7 +23,7 @@ export default function App() {
   useEffect(() => {
     const handleHash = () => {
       setHash(window.location.hash);
-      if (window.location.hash === "#founder") {
+      if (window.location.hash === "#founder" || window.location.hash === "#mainframe") {
         window.scrollTo({ top: 0 });
       }
     };
@@ -50,9 +51,14 @@ export default function App() {
 
   const isFounderPage = hash === "#founder";
   const isAllArticlesPage = hash === "#all-articles";
+  const isMainframePage = hash === "#mainframe";
+
+  if (isMainframePage) {
+    return <MainframeHero />;
+  }
 
   return (
-    <div className="relative bg-white text-neutral-900 font-sans selection:bg-[#EAECE9] selection:text-[#1C2E1E] antialiased overflow-x-hidden flex flex-col lg:block lg:min-h-screen">
+    <div className="relative min-h-screen bg-paper text-ink grain overflow-x-hidden">
       <Nav />
       {isFounderPage ? (
         <main className="pt-24">
