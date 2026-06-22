@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SectionHead } from "./About";
 
 // Replace this with your Google Sheets Web App URL, Formspree endpoint, or Web3Forms URL
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://script.google.com/a/macros/medscalesystems.com/s/AKfycbzFrV2s1-DpgBT5hlHoMWUwdeU1ESSwS6CoSyRPW7AexgCZ3TKDbQfRxrfxvtNiisI/exec";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
