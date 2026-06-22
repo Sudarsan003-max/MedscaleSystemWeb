@@ -80,8 +80,18 @@ export default function MainframeHero() {
       }
     };
 
+    const handleLoadedMetadata = () => {
+      video.currentTime = 0.001;
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
     video.addEventListener("seeked", handleSeeked);
+
+    if (video.readyState >= 1) {
+      handleLoadedMetadata();
+    } else {
+      video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    }
 
     // Mobile check
     if (window.innerWidth < 1024) {
@@ -95,6 +105,7 @@ export default function MainframeHero() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       video.removeEventListener("seeked", handleSeeked);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
     };
   }, []);
 

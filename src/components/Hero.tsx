@@ -21,7 +21,10 @@ function useCount(target: number, duration = 1800, start = false) {
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const prevX = useRef<number | null>(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => e.isIntersecting && setInView(true), { threshold: 0.1 });
     if (ref.current) io.observe(ref.current);
@@ -33,11 +36,86 @@ export default function Hero() {
   const growth = useCount(428, 2200, inView);
   const reduction = useCount(89, 1800, inView);
 
+  // Desktop Video Scrubbing & Mobile Autoplay
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let isSeeking = false;
+    let targetTime: number | null = null;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 1024) return;
+      if (!video.duration) return;
+
+      const currentX = e.clientX;
+      if (prevX.current !== null) {
+        const delta = currentX - prevX.current;
+        const duration = video.duration;
+        let newTime = video.currentTime + (delta / window.innerWidth) * 0.8 * duration;
+        newTime = Math.max(0, Math.min(newTime, duration));
+        
+        targetTime = newTime;
+        if (!isSeeking) {
+          video.currentTime = newTime;
+          isSeeking = true;
+        }
+      }
+      prevX.current = currentX;
+    };
+
+    const handleSeeked = () => {
+      if (targetTime !== null && Math.abs(video.currentTime - targetTime) > 0.05) {
+        video.currentTime = targetTime;
+      } else {
+        isSeeking = false;
+        targetTime = null;
+      }
+    };
+
+    const handleLoadedMetadata = () => {
+      video.currentTime = 0.001;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    video.addEventListener("seeked", handleSeeked);
+
+    if (video.readyState >= 1) {
+      handleLoadedMetadata();
+    } else {
+      video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    }
+
+    // Mobile check
+    if (window.innerWidth < 1024) {
+      video.autoplay = true;
+      video.loop = true;
+      video.play().catch((err) => {
+        console.log("Autoplay failed:", err);
+      });
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      video.removeEventListener("seeked", handleSeeked);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+    };
+  }, []);
+
   return (
-    <section id="top" ref={ref} className="relative pt-36 pb-12 overflow-hidden">
-      {/* Decorative blob */}
-      <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#0000cd] opacity-90 -z-0" />
-      <div className="pointer-events-none absolute top-40 -left-32 h-[360px] w-[360px] rounded-full bg-[#ff5d3b]/30 blur-[80px] -z-0" />
+    <section id="top" ref={ref} className="relative pt-36 pb-12 overflow-hidden bg-white">
+      {/* Background Video with 3D-like Scrubbing */}
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none w-full h-full bg-white">
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover object-right lg:object-right-bottom"
+        >
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       <div className="relative mx-auto max-w-[1400px] px-5">
         {/* Top meta strip */}
