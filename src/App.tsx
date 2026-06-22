@@ -13,6 +13,7 @@ import Testimonials from "./components/Testimonials";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AllArticles from "./components/AllArticles";
 
 export default function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -48,6 +49,7 @@ export default function App() {
   }, []);
 
   const isFounderPage = hash === "#founder";
+  const isAllArticlesPage = hash === "#all-articles";
 
   return (
     <div className="relative min-h-screen bg-paper text-ink grain overflow-x-hidden">
@@ -55,6 +57,10 @@ export default function App() {
       {isFounderPage ? (
         <main className="pt-24">
           <Founder />
+        </main>
+      ) : isAllArticlesPage ? (
+        <main className="pt-24">
+          <AllArticles />
         </main>
       ) : (
         <main>
