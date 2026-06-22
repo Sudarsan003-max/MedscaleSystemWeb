@@ -1,20 +1,6 @@
-import studioBg from "./studio_bg_4k.png";
-
 export default function Footer() {
   return (
     <footer className="relative bg-ink text-bone pt-20 pb-8 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
-      {/* Background Image Container */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <img
-          src={studioBg}
-          alt="Studio Background"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Subtle top/bottom gradients to transition with adjacent dark sections */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
-      </div>
-
       <div className="relative z-10 mx-auto max-w-[1400px] px-5">
         {/* Big wordmark */}
         <div className="border-y border-white/10 py-10 sm:py-16">
